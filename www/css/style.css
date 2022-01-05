@@ -1,13 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
+:root {
+	--orange: #ec6e4c;
+	--charade: #2f2e41;
+}
+
 * {
-    -webkit-tap-highlight-color: transparent;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+	-webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    padding:
-        env(safe-area-inset-top, 0px)
-        env(safe-area-inset-right, 0px)
-        env(safe-area-inset-bottom, 0px)
-        env(safe-area-inset-left, 0px);
+	padding:
+		env(safe-area-inset-top, 0px)
+		env(safe-area-inset-right, 0px)
+		env(safe-area-inset-bottom, 0px)
+		env(safe-area-inset-left, 0px);
+}
+
+header {
+	align-items: center;
+	background-color: #ffffff;
+	background-color: red;
+	background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+	box-shadow: 0 4px 2px -2px gray;
+	display: flex;
+	height: 70px;
+	justify-content: space-between;
+	padding: 20px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 20;
+}
+
+header .fas {
+	color: #E15C38;
+	font-size: 20px;
+}
+
+header .data p {
+	margin: 0;
+	text-align: center;
+}
+
+#location {
+	border-top: 1px solid var(--orange);
+	color: var(--charade);
+	font-family: "Baloo 2", sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 30px;
+	margin-top: 2px;
+	margin: 0;
+}
+
+section {
+	padding-top: 70px;
+}
+
+#quick-weather {
+	align-items: center;
+	background-attachment: fixed;
+	background-image: url("../img/weather/clear-sky.svg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	text-align: center;
+}
+
+.glassmorphism {
+	-webkit-backdrop-filter: blur(25px) saturate(200%);
+	backdrop-filter: blur(25px) saturate(200%);
+	background-color: rgba(255, 255, 255, 0.36);
+	border-radius: 12px;
+	border: 1px solid rgba(209, 213, 219, 0.3);
+	display: inline-block;
+	margin-top: 10vh;
+	padding: 20px 50px;
+}
+
+#temperature {
+	color: var(--charade);
+	font-size: 40px;
+	font-weight: bold;
+}
+
+#description {
+	font-size: 20px;
+}
+
+#weather-details {
+	background-color: yellow;
+	height: 100vh;
 }
