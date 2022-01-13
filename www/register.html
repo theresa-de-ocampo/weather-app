@@ -55,9 +55,8 @@
 	<script src="js/validation.js"></script>
 	<script type="module">
 		$("form").on("submit", function(e) {
-			if (validate("login.html", e)) {
+			if (validate(e, true)) {
 
-				console.log();
 			}
 		});
 	</script>

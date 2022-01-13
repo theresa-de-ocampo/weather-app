@@ -1,15 +1,12 @@
 // jshint esversion: 6
-function validate(redirectTo, e) {
+function validate(e, withCustomCheck) {
 	const completeFlag = completeInput();
 	let customFlag = true;
-	if (redirectTo == "login.html") {
+	if (withCustomCheck)
 		customFlag = customCheck();
-	}
 	let noError = completeFlag && customFlag;
 
-	if (noError)
-		return noError;
-	else {
+	if (!noError){
 		navigator.vibrate(2000);
 		$firstErrorEl = $(".error").first();
 		$("html, body").animate({
@@ -19,6 +16,7 @@ function validate(redirectTo, e) {
 	}
 
 	e.preventDefault();
+	return noError;
 }
 
 function customCheck() {
