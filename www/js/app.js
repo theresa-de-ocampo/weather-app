@@ -17,7 +17,6 @@ let openWeatherMap = {
 		.then(data => this.displayWeather(data, unit));
 	},
 	fetchWeatherByCoords: function(latitude, longitude, unit = "metric", setLocation = false) {
-		console.log(unit);
 		fetch(
 			`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${unit}&appid=${this.apiKey}`
 		)
@@ -45,7 +44,7 @@ let openWeatherMap = {
 	},
 	initialize: function() {
 		const that = this;
-		const options = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
+		const options = { maximumAge: 3000, timeout: 10000, enableHighAccuracy: true };
 		navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
 		function onSuccess(position) {

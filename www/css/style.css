@@ -27,8 +27,6 @@ body {
 
 header {
 	align-items: center;
-	background-color: #ffffff;
-	background-color: red;
 	background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
 	box-shadow: 0 4px 2px -2px gray;
 	display: flex;
@@ -39,6 +37,10 @@ header {
 	top: 0;
 	width: 100%;
 	z-index: 20;
+}
+
+header a {
+	text-decoration: none;
 }
 
 header .fas {

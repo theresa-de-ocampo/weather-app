@@ -1,0 +1,126 @@
+:root {
+	--light-gray: #d3d3d3;
+	--red: #ff0000;
+	--orange: #ec6e4c;
+	--charade: #2f2e41;
+	--gun-powder: #3f3f56;
+}
+
+* {
+	-webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	/*padding:
+		env(safe-area-inset-top, 0px)
+		env(safe-area-inset-right, 0px)
+		env(safe-area-inset-bottom, 0px)
+		env(safe-area-inset-left, 0px);*/
+	/*background-image: url("../img/juliett.png");*/
+	background-image: url("../img/wave.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.curved {
+    width: 100%;
+    height: 30vh;
+    position: relative;
+    padding: 50px;
+    display: flex;	
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.curved::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, var(--orange), #f9d29d);
+    background: linear-gradient(to right, var(--orange), #f2a65a);
+    background: linear-gradient(to right, var(--orange), #f2a65a);
+    z-index: -1;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    transform: scaleX(1.5);
+}
+
+h1 {
+	color: #ec6e4c;
+	text-align: center;
+	width: 900px;
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+form {
+	padding: 60px 10vw;
+}
+
+label,
+figcaption {
+	display: block;
+}
+
+label,
+figcaption {
+	margin-top: 25px;
+	color: var(--gun-powder);
+}
+
+.required {
+	color: var(--red);
+}
+
+input {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	border: 1px solid var(--light-gray);
+	border-bottom-width: 2px; /* Should always be after border property. */
+	font-size: 17px;
+	height: 38px;
+	outline: none;
+	padding: 0 15px;
+	transition: all 0.3s ease;
+	width: 100%;
+}
+
+input:focus {
+	border-color: var(--charade);
+}
+
+a {
+	margin-top: 25px;
+	display: block;
+	text-align: center;
+}
+
+button {
+	border-radius: 5px;
+	border: none;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 700;
+	height: 48px;
+	line-height: 22px;
+	margin-top: 30px;
+	padding: 12px 29px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+	background-color: var(--orange);
+}
+
+#sign-up {
+	margin-top: 40px;
+}
