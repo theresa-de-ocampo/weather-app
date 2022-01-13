@@ -1,0 +1,11 @@
+p.error {
+	color: var(--tall-poppy);
+	font-size: 16px;
+	margin-top: 5px;
+	text-align: justify;
+}
+
+.fa-exclamation-circle {
+	color: var(--tall-poppy);
+	margin-right: 5px;
+}

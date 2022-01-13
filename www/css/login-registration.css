@@ -1,4 +1,4 @@
-:root {
+/*:root {
 	--light-gray: #d3d3d3;
 	--red: #ff0000;
 	--orange: #ec6e4c;
@@ -13,19 +13,13 @@
 }
 
 body {
-	/*padding:
+	padding:
 		env(safe-area-inset-top, 0px)
 		env(safe-area-inset-right, 0px)
 		env(safe-area-inset-bottom, 0px)
-		env(safe-area-inset-left, 0px);*/
-	/*background-image: url("../img/juliett.png");*/
-	background-image: url("../img/wave.png");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	min-height: 100vh;
+		env(safe-area-inset-left, 0px);
 	margin: 0;
-}
+}*/
 
 .curved {
     width: 100%;
@@ -80,6 +74,10 @@ figcaption {
 
 .required {
 	color: var(--red);
+}
+
+label {
+	font-size: 17px;
 }
 
 input {

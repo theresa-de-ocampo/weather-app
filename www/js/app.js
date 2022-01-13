@@ -11,10 +11,10 @@ imperial = {
 
 let openWeatherMap = {
 	"apiKey": "364a5841b429913e54511e8bb51ba359",
-	fetchWeatherByCity: function(city, unit = "metric") {
+	fetchWeatherByCity: function(city, unit = "metric", setLocation = false) {
 		fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${this.apiKey}`)
 		.then(response => response.json())
-		.then(data => this.displayWeather(data, unit));
+		.then(data => this.displayWeather(data, unit, setLocation));
 	},
 	fetchWeatherByCoords: function(latitude, longitude, unit = "metric", setLocation = false) {
 		fetch(
@@ -44,7 +44,7 @@ let openWeatherMap = {
 	},
 	initialize: function() {
 		const that = this;
-		const options = { maximumAge: 3000, timeout: 10000, enableHighAccuracy: true };
+		const options = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
 		navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
 		function onSuccess(position) {
