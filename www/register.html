@@ -36,7 +36,7 @@
 		<label for="contact-no">Contact No. <span class="required">*</span></label>
 		<input id="contact-no" type="text" name="contact-no" required />
 
-		<label for="location">Location <span class="required">*</span></label>
+		<label for="location">City & Country Code <span class="required">*</span></label>
 		<input id="location" type="text" name="location" required />
 
 		<label for="email">Email <span class="required">*</span></label>
@@ -52,13 +52,49 @@
 	</form>
 
 	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/open-weather-map.js"></script>
 	<script src="js/validation.js"></script>
+	<script src="js/crypto-4.1.1.min.js"></script>
+	<script src="js/crypto.js"></script>
+	<script src="js/register.js"></script>
 	<script type="module">
+		// jshint esversion: 6
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
+		const firebaseConfig = {
+			apiKey: "AIzaSyCfDbjM-Ex2pooaDUZpry42-7WZlIimMoQ",
+			authDomain: "weather-app-d05dd.firebaseapp.com",
+			projectId: "weather-app-d05dd",
+			storageBucket: "weather-app-d05dd.appspot.com",
+			messagingSenderId: "721434338443",
+			appId: "1:721434338443:web:f96b62f80fe467a34aa08e"
+		};
+		const app = initializeApp(firebaseConfig);
+
+		import {getDatabase, ref, get, set, child, update, remove}
+			from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
+		const database = getDatabase();
+
 		$("form").on("submit", function(e) {
 			if (validate(e, true)) {
-
+				const id = generateId();
+				const data = {
+					"id": id,
+					"fname": $("#fname").val(),
+					"lname": $("#lname").val(),
+					"contact-no": $("#contact-no").val(),
+					"location": $("#location").val(),
+					"email": $("#email").val(),
+					"password": crypto.encrypt($("#password").val())
+				};
+				insertRecord(data, id);
 			}
 		});
+
+		function insertRecord(data, id) {
+			set(ref(database, "user/" + id), data)
+			.then(() => navigator.notification.alert("New account was successfully created!", null, "WWÜ"))
+			.catch(error => navigator.notification.alert("[ERROR] " + error, null, "WWÜ"));
+		}
 	</script>
 </body>
 </html>

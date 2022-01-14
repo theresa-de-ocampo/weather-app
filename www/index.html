@@ -76,26 +76,9 @@
 
 	<!-- <script src="cordova.js"></script> -->
 	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/open-weather-map.js"></script>
 	<script src="js/moment-2.29.1.min.js"></script>
 	<script src="js/util.js"></script>
 	<script src="js/app.js"></script>
-	<script type="module">
-		// jshint esversion: 6
-		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
-		const firebaseConfig = {
-			apiKey: "AIzaSyCfDbjM-Ex2pooaDUZpry42-7WZlIimMoQ",
-			authDomain: "weather-app-d05dd.firebaseapp.com",
-			projectId: "weather-app-d05dd",
-			storageBucket: "weather-app-d05dd.appspot.com",
-			messagingSenderId: "721434338443",
-			appId: "1:721434338443:web:f96b62f80fe467a34aa08e"
-		};
-		const app = initializeApp(firebaseConfig);
-
-		import {getDatabase, ref, get, set, child, update, remove}
-			from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
-		const database = getDatabase();
-		console.log(database);
-	</script>
 </body>
 </html>
