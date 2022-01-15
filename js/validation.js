@@ -7,6 +7,7 @@ function validate(e, withCustomCheck) {
 	let noError = completeFlag && customFlag;
 
 	if (!noError){
+		e.preventDefault();
 		navigator.vibrate(2000);
 		$firstErrorEl = $(".error").first();
 		$("html, body").animate({
@@ -14,9 +15,6 @@ function validate(e, withCustomCheck) {
 		}, 1000);
 		$firstErrorEl.focus();
 	}
-
-	e.preventDefault();
-	return noError;
 }
 
 function customCheck() {

@@ -23,3 +23,7 @@ function onSuccess(position) {
 		$("#location").val(data[0].name + ", " + data[0].country);
 	});
 }
+
+$("form").on("submit", function(e) {
+	validate(e, true);
+});
