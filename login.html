@@ -5,21 +5,13 @@
 	<meta name="author" content="Theresa De Ocampo" />
 	<meta name="description" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta 
-		http-equiv="Content-Security-Policy"
-		content="
-			default-src 'self' https://api.openweathermap.org/ data: gap: https://ssl.gstatic.com;
-			media-src 'self';
-			style-src 'self' https://fonts.googleapis.com;
-			font-src 'self' https://fonts.gstatic.com;
-			script-src 'self'
-				https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js
-				https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js 'unsafe-inline';" />
 	<meta name="format-detection" content="telephone=yes">
 	<meta name="msapplication-tap-highlight" content="no">
 	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="css/all.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/general.css" />
 	<link rel="stylesheet" type="text/css" href="css/login-registration.css" />
+	<link rel="stylesheet" type="text/css" href="css/validation.css" />
 	<title>WWÜ</title>
 </head>
 <body>
@@ -31,8 +23,15 @@
 		<label for="password">Password <span class="required">*</span></label>
 		<input id="password" type="password" name="password" required />
 
+		<input id="show-password" type="checkbox" class="show-password" />
+		<label for="show-password" class="inline show-password-label">Show Password</label>
+
 		<a href="register.html">Create an Account</a>
 		<button type="submit">LOG IN</button>
 	</form>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/show-password.js"></script>
+	<script src="js/validation.js"></script>
 </body>
 </html>

@@ -23,5 +23,3 @@ function onSuccess(position) {
 		$("#location").val(data[0].name + ", " + data[0].country);
 	});
 }
-
-$("#show-passwords").on("click", toggleVisibility);

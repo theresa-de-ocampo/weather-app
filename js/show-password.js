@@ -13,3 +13,5 @@ function toggleVisibility(e) {
 			$(this).attr("type", "password");
 		});
 }
+
+$(".show-password").on("click", toggleVisibility);
