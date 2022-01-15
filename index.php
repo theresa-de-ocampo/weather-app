@@ -1,3 +1,22 @@
+<?php
+	session_start();
+	if (isset($_SESSION["account-verified"])) {
+		$user_id = $_SESSION["account-verified"];
+		require_once "config/config.php";
+		require_once "lib/database-handler.php";
+		require_once "models/User.php";
+		$user = new User();
+		$account = $user->getUser($user_id);
+		$fname = $account->fname;
+		$location = $account->location;
+		$icon = "out";
+	}
+	else {
+		$user_id = $location = "";
+		$fname = "wwü";
+		$icon = "in";
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +42,10 @@
 </head>
 <body>
 	<header>
-		<a href="login.html" class="fas fa-sign-in-alt"></a>
+		<a href="login.html" class="fas fa-sign-<?php echo $icon; ?>-alt"></a>
 		<div class="data">
-			<p id="fname">wwü</p>
-			<p id="location"></p>
+			<p id="fname" data-user-id="<?php echo $user_id; ?>"><?php echo $fname; ?></p>
+			<p id="location"><?php echo $location; ?></p>
 		</div><!-- .data -->
 		<div class="fas fa-ellipsis-v" role="button"></div>
 	</header>

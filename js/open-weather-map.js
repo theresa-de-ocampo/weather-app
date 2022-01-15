@@ -26,7 +26,7 @@ let openWeatherMap = {
 	displayWeather: function(data, unit, setLocation) {
 		console.log(data);
 		if (setLocation)
-			$("#location").text(data.name.toUpperCase());
+			$("#location").text(data.name + ", " + data.sys.country);
 
 		// Quick Weather Section
 		$("#temperature .value").text(Math.round(data.main.temp));

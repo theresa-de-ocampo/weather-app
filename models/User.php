@@ -20,9 +20,15 @@ class User {
 		$this->db->execute("Your account was successfully created!", "../index.php");
 	}
 
-	public function getUser($email) {
+	public function confirmUser($email) {
 		$this->db->query("SELECT `user_id`, `password` FROM `user` WHERE `email` = ?");
 		$this->db->bind(1, $email);
+		return $this->db->resultRecord();
+	}
+
+	public function getUser($id) {
+		$this->db->query("SELECT * FROM `user` WHERE `user_id` = ?");
+		$this->db->bind(1, $id);
 		return $this->db->resultRecord();
 	}
 }

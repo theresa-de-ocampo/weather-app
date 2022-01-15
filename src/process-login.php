@@ -7,7 +7,7 @@ if (isset($_POST["submit"])) {
 	$email = $_POST["email"];
 	$password = $_POST["password"];
 	$user = new User();
-	$account = $user->getUser($email);
+	$account = $user->confirmUser($email);
 	if ($account) {
 		if (password_verify($password, $account->password)) {
 			$_SESSION["account-verified"] = $account->user_id;

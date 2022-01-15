@@ -1,2 +1,6 @@
 // jshint esversion: 6
-openWeatherMap.initialize();
+const userId = $("#fname").attr("data-user-id");
+if (userId !== "")
+	openWeatherMap.fetchWeatherByCityAndCountry($("#location").text());
+else
+	openWeatherMap.initialize();

@@ -35,6 +35,7 @@ header .data p {
 	line-height: 30px;
 	margin-top: 2px;
 	margin: 0;
+	text-transform: uppercase;
 }
 
 section {
