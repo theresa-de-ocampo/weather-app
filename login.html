@@ -24,7 +24,7 @@
 </head>
 <body>
 	<header class="curved"><h1>Welcome</h1></header>
-	<form method="post" novalidate>
+	<form action="src/process-login.php" method="post" novalidate>
 		<label for="email">Email <span class="required">*</span></label>
 		<input id="email" type="email" name="email" required />
 
@@ -35,7 +35,7 @@
 		<label for="show-password" class="inline show-password-label">Show Password</label>
 
 		<a href="register.html">Create an Account</a>
-		<button type="submit">LOG IN</button>
+		<button type="submit" name="submit">LOG IN</button>
 	</form>
 
 	<script src="js/jquery-3.6.0.min.js"></script>

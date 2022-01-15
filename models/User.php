@@ -19,4 +19,10 @@ class User {
 		$this->db->bind(6, password_hash($data["password"], PASSWORD_DEFAULT));
 		$this->db->execute("Your account was successfully created!", "../index.php");
 	}
+
+	public function getUser($email) {
+		$this->db->query("SELECT `user_id`, `password` FROM `user` WHERE `email` = ?");
+		$this->db->bind(1, $email);
+		return $this->db->resultRecord();
+	}
 }
