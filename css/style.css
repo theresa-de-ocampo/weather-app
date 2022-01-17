@@ -17,7 +17,7 @@ header a {
 }
 
 header .fas {
-	color: #E15C38;
+	color: var(--dark-orange);
 	font-size: 20px;
 }
 
@@ -36,6 +36,90 @@ header .data p {
 	margin-top: 2px;
 	margin: 0;
 	text-transform: uppercase;
+}
+
+nav {
+	background-attachment: fixed;
+	background-image: url("../img/menu-background.jpg");
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-top: 1px solid var(--charade);
+	height: 100vh;
+	margin-right: 0;
+	opacity: 0;
+	position: fixed;
+	text-align: center;
+	top: 70px;
+	transition: all 0.5s;
+	transition: visibility 0s, opacity 0.5s linear;
+	visibility: hidden;
+	width: 100%;
+	z-index: 30;
+}
+
+nav ul li {
+	display: block;
+	margin: 30px 0;
+}
+
+nav ul li a {
+	padding: 7px 25px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: var(--charade);
+	font-size: 27px;
+	font-family: "Dosis";
+}
+
+#check-menu {
+	display: none;
+	color: var(--orange);
+}
+
+.menu-lines,
+.menu-lines::before,
+.menu-lines::after {
+	background-color: var(--orange);
+	border-radius: 5px;
+	box-shadow: 0 2px 5px gray;
+	height: 5px;
+	transition: all 0.5s ease-in-out;
+	width: 30px;
+}
+
+.menu-lines::before,
+.menu-lines::after {
+	content: "";
+	display: block;
+	position: absolute;
+}
+
+.menu-lines::before {
+	transform: translateY(-10px);
+}
+
+.menu-lines::after {
+	transform: translateY(10px);
+}
+
+#check-menu:checked ~ label > .menu-lines {
+	background-color: transparent;
+	box-shadow: none;
+	transform: translateX(-50px);
+}
+
+#check-menu:checked ~ label .menu-lines::before {
+	box-shadow: none;
+	transform: rotate(45deg) translate(35px, -35px);
+}
+
+#check-menu:checked ~ label .menu-lines::after {
+	transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.active {
+	text-decoration: underline;
 }
 
 section {

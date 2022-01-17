@@ -41,13 +41,23 @@
 	<title>WWÜ</title>
 </head>
 <body>
+	<nav>
+		<ul>
+			<li><a href="index.php" class="active">Home</a></li>
+			<li><a href="#">Friends</a></li>
+			<li><a href="#">Settings</a></li>
+			<li><a href="#">Share</a></li>
+		</ul>
+	</nav>
+
 	<header>
 		<a href="login.html" class="fas fa-sign-<?php echo $icon; ?>-alt"></a>
 		<div class="data">
 			<p id="fname" data-user-id="<?php echo $user_id; ?>"><?php echo $fname; ?></p>
 			<p id="location"><?php echo $location; ?></p>
 		</div><!-- .data -->
-		<div class="fas fa-ellipsis-v" role="button"></div>
+		<input id="check-menu" type="checkbox" name="check-menu" />
+		<label for="check-menu" class="menu-button"><div class="menu-lines"></div></label>
 	</header>
 
 	<main>
