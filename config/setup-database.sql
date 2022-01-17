@@ -15,6 +15,22 @@ CREATE TABLE `user` (
 	`status` ENUM('Safe', 'Moderately Affected', 'Severely Affected') DEFAULT 'Safe' NOT NULL
 ) Engine=InnoDB;
 
+CREATE TABLE `friend` (
+	`from` INT UNSIGNED NOT NULL,
+	`to` INT UNSIGNED NOT NULL,
+	`status` ENUM('Friends', 'Pending', 'Rejected', 'Blocked') DEFAULT 'Pending',
+
+	CONSTRAINT pk_friend PRIMARY KEY (`from`, `to`),
+	CONSTRAINT fk_friend_from FOREIGN KEY (`from`)
+		REFERENCES `user` (`user_id`)
+		ON UPDATE CASCADE
+		ON DELETE RESTRICT,
+	CONSTRAINT fk_friend_to FOREIGN KEY (`to`)
+		REFERENCES `user` (`user_id`)
+		ON UPDATE CASCADE
+		ON DELETE RESTRICT
+) Engine=InnoDB;
+
 INSERT INTO
 	`user`
 VALUES
@@ -44,5 +60,19 @@ VALUES
 		'$2y$10$zrMAywZVI2Y4UTeyQ5f24uQ7r91IDKKzewALZtc6769klzT252KvK', DEFAULT, DEFAULT),
 	(DEFAULT, 'Jasmin', 'Herera', '09214710483', 'Subic, PH', 'jasmine.herera@gmail.com',
 		'$2y$10$6DV5h39eoGfNKQUVF6oSa.0hiWagkm/7YdSu1h7sfg66B76qSkEc.', DEFAULT, DEFAULT),
-	(DEFAULT, 'Park', 'Seo-joon', '8295798893', 'Seoul, KR', 'park.seo.joon@gmail.com',
-		'$2y$10$hf1HSfotzHB2rHL1aOVD2OqLRyWZSt6cE5tdbQSaHkUPJfuPD7CIq', DEFAULT, DEFAULT);
+	(DEFAULT, 'Seo-joon', 'Park', '8295798893', 'Seoul, KR', 'park.seo.joon@gmail.com',
+		'$2y$10$hf1HSfotzHB2rHL1aOVD2OqLRyWZSt6cE5tdbQSaHkUPJfuPD7CIq', DEFAULT, DEFAULT),
+	(DEFAULT, 'Seon-ho', 'Kim', '8292694897', 'Pohang, KR', 'kim.seon.ho@gmail.com',
+		'$2y$10$Y9BK8yWGNLNhUEBCMlS5FeuaKH4r023CpK6hKfrejtFow2lrB59c2', DEFAULT, DEFAULT),
+	(DEFAULT, 'Andrew', 'Sy', '09074653981', 'Makati, PH', 'andrew.sy@gmail.com',
+		'$2y$10$/XgnYRr8AUPXIwwRtWOEGO.kWEvNkqhX6klEkUWo4DRUNsZNZIKRi', DEFAULT, DEFAULT);
+
+INSERT INTO
+	`friend`
+VALUES
+	(1, 3, 'Friends'),
+	(1, 4, 'Friends'),
+	(1, 6, 'Friends'),
+	(1, 7, 'Friends'),
+	(14, 1, 'Pending'),
+	(16, 1, 'Pending');
