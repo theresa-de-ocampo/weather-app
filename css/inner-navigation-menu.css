@@ -1,0 +1,134 @@
+main > nav {
+	display: flex;
+	justify-content: center;
+}
+
+footer {
+	align-items: center;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	width: 320px;
+	margin: 0 auto;
+}
+
+footer::before {
+	bottom: -10px;
+	content: "";
+	height: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	width: 84%;
+}
+
+footer::after {
+	content: "";
+}
+
+#frame {
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+}
+
+#base {
+	background-color: #5b6467;
+	background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+	border-radius: 30px 30px 0 0;
+	display: flex;
+	height: 66px;
+	justify-content: center;
+	width: 100%;
+}
+
+footer input {
+	display: none;
+}
+
+footer label {
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	height: 66px;
+	justify-content: center;
+	position: relative;
+	width: 33%;
+	z-index: 2;
+}
+
+footer label .fas {
+	align-items: center;
+	bottom: 0;
+	color: #fff;
+	display: flex;
+	font-size: 25px;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	transition: 200ms cubic-bezier(0.14, -0.08, 0.74, 1.4);
+	width: 25px;
+	z-index: 3;
+}
+
+footer label::before {
+	content: "";
+	position: relative;
+}
+
+#circle {
+	background-image: linear-gradient(45deg, var(--orange) 0%, var(--sandy-brown) 100%);
+	border-radius: 50%;
+	height: 60px;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: -40px;
+	transition: 200ms cubic-bezier(0.14, -0.08, 0.74, 1.4);
+	width: 60px;
+	z-index: 1;
+}
+
+#indicator {
+	background-color: #fff;
+	background-position: 0 10px;
+	background-size: cover;
+	border-radius: 50%;
+	height: 70px;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: -42px;
+	transition: 200ms cubic-bezier(0.14, -0.08, 0.74, 1.4);
+	width: 70px;
+}
+
+#requests:checked ~ [for="requests"] > .fas {
+	top: -85px;
+}
+
+#requests:checked ~ #circle,
+#requests:checked ~ div div #indicator {
+	left: -66%;
+}
+
+#friends:checked ~ [for="friends"] > .fas {
+	top: -85px;
+}
+
+#friends:checked ~ #circle,
+#friends:checked ~ div div #indicator {
+	left: 0;
+}
+
+#search:checked ~ [for="search"] > .fas {
+	top: -85px;
+}
+
+#search:checked ~ #circle,
+#search:checked ~ div div #indicator {
+	left: 66%;
+}

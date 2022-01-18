@@ -38,7 +38,7 @@ header .data p {
 	text-transform: uppercase;
 }
 
-nav {
+body > nav {
 	background-attachment: fixed;
 	background-image: url("../img/menu-background.jpg");
 	background-position: top center;
@@ -58,12 +58,12 @@ nav {
 	z-index: 30;
 }
 
-nav ul li {
+body > nav ul li {
 	display: block;
 	margin: 30px 0;
 }
 
-nav ul li a {
+body > nav ul li a {
 	padding: 7px 25px;
 	text-decoration: none;
 	text-transform: uppercase;

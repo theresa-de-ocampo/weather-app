@@ -1,22 +1,4 @@
-<?php
-	session_start();
-	if (isset($_SESSION["account-verified"])) {
-		$user_id = $_SESSION["account-verified"];
-		require_once "config/config.php";
-		require_once "lib/database-handler.php";
-		require_once "models/User.php";
-		$user = new User();
-		$account = $user->getUser($user_id);
-		$fname = $account->fname;
-		$location = $account->location;
-		$icon = "out";
-	}
-	else {
-		$user_id = $location = "";
-		$fname = "wwü";
-		$icon = "in";
-	}
-?>
+<?php require_once "src/header.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,8 +26,8 @@
 	<nav>
 		<ul>
 			<li><a href="index.php" class="active">Home</a></li>
-			<li><a href="#">Friends</a></li>
-			<li><a href="#">Settings</a></li>
+			<li><a href="friends.php" class="requires-login">Friends</a></li>
+			<li><a href="#" class="requires-login">Settings</a></li>
 			<li><a href="#">Share</a></li>
 		</ul>
 	</nav>
@@ -105,6 +87,7 @@
 	<script src="js/open-weather-map.js"></script>
 	<script src="js/moment-2.29.1.min.js"></script>
 	<script src="js/util.js"></script>
+	<script src="js/outer-navigation.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
