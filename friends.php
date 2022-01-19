@@ -8,9 +8,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/all.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/general.css" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/outer-navigation-menu.css" />
 	<link rel="stylesheet" type="text/css" href="css/inner-navigation-menu.css" />
 	<link rel="stylesheet" type="text/css" href="css/input.css" />
+	<link rel="stylesheet" type="text/css" href="css/weather-status.css" />
 	<link rel="stylesheet" type="text/css" href="css/friends.css" />
 	<title>WWÜ</title>
 </head>

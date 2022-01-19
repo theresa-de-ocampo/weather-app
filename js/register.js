@@ -1,4 +1,3 @@
-
 // jshint esversion: 6
 function generateId() {
 	const now = new Date();

@@ -18,6 +18,7 @@
 	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
 	<link rel="stylesheet" type="text/css" href="css/all.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/general.css" />
+	<link rel="stylesheet" type="text/css" href="css/outer-navigation-menu.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/media-queries.css" />
 	<title>WWÜ</title>

@@ -1,0 +1,11 @@
+.safe {
+	color: var(--green);
+}
+
+.moderately-affected {
+	color: var(--saffron);
+}
+
+.severely-affected {
+	color: var(--tall-poppy);
+}

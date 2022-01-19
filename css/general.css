@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
 
 :root {
+	--cadet-blue: #9fa5c0;
 	--charade: #2f2e41;
 	--dark-orange: #e15c38;
 	--green: #34c300;
@@ -13,7 +14,6 @@
 	--red: #ff0000;
 	--saffron: #f5d23b;
 	--sandy-brown: #f2a65a;
-	--tall-poppy: #b2272b;
 	--tall-poppy: #b2272b;
 }
 
@@ -26,11 +26,11 @@
 }
 
 h2 {
-	text-align: center;
 	color: var(--orange);
 	font-weight: 700;
+	margin: 0 0 10px 0;
+	text-align: center;
 	text-transform: uppercase;
-	margin: 20px 0 10px 0;
 }
 
 body {

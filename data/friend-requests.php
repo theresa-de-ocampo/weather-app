@@ -4,7 +4,6 @@
 	require_once "../config/config.php";
 	require_once "../lib/database-handler.php";
 	require_once "../models/User.php";
-	$user_id = 1;
 	$user = new User();
 	$friend_requests = $user->getFriendRequests($user_id);
 ?>

@@ -6,6 +6,8 @@
 	align-items: center;
 	display: grid;
 	margin-bottom: 20px;
+	text-decoration: none;
+	color: #000;
 }
 
 .solo {
@@ -30,18 +32,6 @@
 
 .status {
 	text-align: right;
-}
-
-.safe {
-	color: var(--green);
-}
-
-.moderately-affected {
-	color: var(--saffron);
-}
-
-.severely-affected {
-	color: var(--tall-poppy);
 }
 
 /* Friend Requests */

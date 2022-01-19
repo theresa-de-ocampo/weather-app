@@ -1,0 +1,127 @@
+header {
+	align-items: center;
+	background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+	box-shadow: 0 4px 2px -2px gray;
+	display: flex;
+	height: 70px;
+	justify-content: space-between;
+	padding: 20px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 20;
+}
+
+header a {
+	text-decoration: none;
+}
+
+header .fas {
+	color: var(--dark-orange);
+	font-size: 20px;
+}
+
+header .data p {
+	margin: 0;
+	text-align: center;
+}
+
+#location {
+	border-top: 1px solid var(--orange);
+	color: var(--charade);
+	font-family: "Baloo 2", sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 30px;
+	margin-top: 2px;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+#outer-navigation {
+	background-attachment: fixed;
+	background-image: url("../img/menu-background.jpg");
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-top: 1px solid var(--charade);
+	height: 100vh;
+	margin-right: 0;
+	opacity: 0;
+	position: fixed;
+	text-align: center;
+	top: 70px;
+	transition: all 0.5s;
+	transition: visibility 0s, opacity 0.5s linear;
+	visibility: hidden;
+	width: 100%;
+	z-index: 30;
+}
+
+#outer-navigation ul li {
+	display: block;
+	margin: 30px 0;
+}
+
+#outer-navigation ul li a {
+	padding: 7px 25px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: var(--charade);
+	font-size: 27px;
+	font-family: "Dosis";
+}
+
+#check-menu {
+	display: none;
+	color: var(--orange);
+}
+
+.menu-lines,
+.menu-lines::before,
+.menu-lines::after {
+	background-color: var(--orange);
+	border-radius: 5px;
+	box-shadow: 0 2px 5px gray;
+	height: 5px;
+	transition: all 0.5s ease-in-out;
+	width: 30px;
+}
+
+.menu-lines::before,
+.menu-lines::after {
+	content: "";
+	display: block;
+	position: absolute;
+}
+
+.menu-lines::before {
+	transform: translateY(-10px);
+}
+
+.menu-lines::after {
+	transform: translateY(10px);
+}
+
+#check-menu:checked ~ label > .menu-lines {
+	background-color: transparent;
+	box-shadow: none;
+	transform: translateX(-50px);
+}
+
+#check-menu:checked ~ label .menu-lines::before {
+	box-shadow: none;
+	transform: rotate(45deg) translate(35px, -35px);
+}
+
+#check-menu:checked ~ label .menu-lines::after {
+	transform: rotate(-45deg) translate(35px, 35px);
+}
+
+#outer-navigation ul li a.active {
+	text-decoration: underline;
+}
+
+section {
+	padding: 100px 50px;
+}

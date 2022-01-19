@@ -14,14 +14,14 @@ let openWeatherMap = {
 	fetchWeatherByCityAndCountry: function(location, unit = "metric", setLocation = false) {
 		fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${this.apiKey}`)
 		.then(response => response.json())
-		.then(data => this.displayWeather(data, unit, setLocation));
+		.then(data => displayWeather(data, unit, setLocation));
 	},
 	fetchWeatherByCoords: function(latitude, longitude, unit = "metric", setLocation = false) {
 		fetch(
 			`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${unit}&appid=${this.apiKey}`
 		)
 		.then(response => response.json())
-		.then(data => this.displayWeather(data, unit, setLocation));
+		.then(data => displayWeather(data, unit, setLocation));
 	},
 	displayWeather: function(data, unit, setLocation) {
 		console.log(data);
