@@ -38,7 +38,7 @@ header .data p {
 	text-transform: uppercase;
 }
 
-body > nav {
+#outer-navigation {
 	background-attachment: fixed;
 	background-image: url("../img/menu-background.jpg");
 	background-position: top center;
@@ -58,12 +58,12 @@ body > nav {
 	z-index: 30;
 }
 
-body > nav ul li {
+#outer-navigation ul li {
 	display: block;
 	margin: 30px 0;
 }
 
-body > nav ul li a {
+#outer-navigation ul li a {
 	padding: 7px 25px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -118,7 +118,7 @@ body > nav ul li a {
 	transform: rotate(-45deg) translate(35px, 35px);
 }
 
-.active {
+#outer-navigation ul li a.active {
 	text-decoration: underline;
 }
 

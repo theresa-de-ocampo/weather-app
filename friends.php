@@ -10,17 +10,19 @@
 	<link rel="stylesheet" type="text/css" href="css/general.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/inner-navigation-menu.css" />
+	<link rel="stylesheet" type="text/css" href="css/input.css" />
+	<link rel="stylesheet" type="text/css" href="css/friends.css" />
 	<title>WWÜ</title>
 </head>
 <body>
-	<nav>
+	<nav id="outer-navigation">
 		<ul>
 			<li><a href="index.php">Home</a></li>
 			<li><a href="friends.php" class="active requires-login">Friends</a></li>
 			<li><a href="#" class="requires-login">Settings</a></li>
 			<li><a href="#">Share</a></li>
 		</ul>
-	</nav>
+	</nav><!-- #outer-navigation -->
 
 	<header>
 		<a href="login.html" class="fas fa-sign-<?php echo $icon; ?>-alt"></a>
@@ -32,29 +34,30 @@
 		<label for="check-menu" class="menu-button"><div class="menu-lines"></div></label>
 	</header>
 	
-	<main>
-		<nav>
-			<footer>
-				<input id="requests" type="radio" name="radio">
-				<input id="friends" type="radio" name="radio" checked>
-				<input id="search" type="radio" name="radio">
+	<main></main>
 
-				<label for="requests"><i class="fas fa-users"></i></label>
-				<label for="friends"><i class="fas fa-home"></i></label>
-				<label for="search"><i class="fas fa-search-plus"></i></label>
+	<nav id="inner-navigation">
+		<footer>
+			<input id="requests-link" type="radio" name="radio">
+			<input id="friends-link" type="radio" name="radio" checked>
+			<input id="search-link" type="radio" name="radio">
 
-				<div id="circle"></div>
+			<label for="requests-link"><i class="fas fa-users"></i></label>
+			<label for="friends-link"><i class="fas fa-home"></i></label>
+			<label for="search-link"><i class="fas fa-search-plus"></i></label>
 
-				<div id="frame">
-					<div id="base">
-						<span id="indicator"></span>
-					</div>
+			<div id="circle"></div>
+
+			<div id="frame">
+				<div id="base">
+					<span id="indicator"></span>
 				</div>
-			</footer>
-		</nav>
-	</main>
+			</div>
+		</footer>
+	</nav><!-- #inner-navigation -->
 
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script src="js/outer-navigation.js"></script>
+	<script src="js/friends.js"></script>
 </body>
 </html>

@@ -31,4 +31,13 @@ class User {
 		$this->db->bind(1, $id);
 		return $this->db->resultRecord();
 	}
+
+	public function getFriends($id) {
+		$this->db->query("
+			SELECT *
+			FROM `friend`
+			WHERE (`from` = $id OR `to` = $id) AND `status` = 'Friends'
+		");
+		return $this->db->resultSet();
+	}
 }

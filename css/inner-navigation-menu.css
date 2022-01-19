@@ -1,4 +1,4 @@
-main > nav {
+#inner-navigation {
 	display: flex;
 	justify-content: center;
 }
@@ -106,29 +106,29 @@ footer label::before {
 	width: 70px;
 }
 
-#requests:checked ~ [for="requests"] > .fas {
+#requests-link:checked ~ [for="requests-link"] > .fas {
 	top: -85px;
 }
 
-#requests:checked ~ #circle,
-#requests:checked ~ div div #indicator {
+#requests-link:checked ~ #circle,
+#requests-link:checked ~ div div #indicator {
 	left: -66%;
 }
 
-#friends:checked ~ [for="friends"] > .fas {
+#friends-link:checked ~ [for="friends-link"] > .fas {
 	top: -85px;
 }
 
-#friends:checked ~ #circle,
-#friends:checked ~ div div #indicator {
+#friends-link:checked ~ #circle,
+#friends-link:checked ~ div div #indicator {
 	left: 0;
 }
 
-#search:checked ~ [for="search"] > .fas {
+#search-link:checked ~ [for="search-link"] > .fas {
 	top: -85px;
 }
 
-#search:checked ~ #circle,
-#search:checked ~ div div #indicator {
+#search-link:checked ~ #circle,
+#search-link:checked ~ div div #indicator {
 	left: 66%;
 }

@@ -23,14 +23,14 @@
 	<title>WWÜ</title>
 </head>
 <body>
-	<nav>
+	<nav id="outer-navigation">
 		<ul>
 			<li><a href="index.php" class="active">Home</a></li>
 			<li><a href="friends.php" class="requires-login">Friends</a></li>
 			<li><a href="#" class="requires-login">Settings</a></li>
 			<li><a href="#">Share</a></li>
 		</ul>
-	</nav>
+	</nav><!-- #outer-navigation -->
 
 	<header>
 		<a href="login.html" class="fas fa-sign-<?php echo $icon; ?>-alt"></a>

@@ -1,0 +1,16 @@
+input {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	border: 1px solid var(--light-gray);
+	border-bottom-width: 2px; /* Should always be after border property. */
+	font-size: 17px;
+	height: 38px;
+	outline: none;
+	padding: 0 15px;
+	transition: all 0.3s ease;
+	width: 100%;
+}
+
+input:focus {
+	border-color: var(--charade);
+}
