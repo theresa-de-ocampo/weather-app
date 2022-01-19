@@ -3,17 +3,29 @@
 }
 
 .item {
-	display: grid;
-	grid-template-columns: 2fr 3fr 1fr;
 	align-items: center;
+	display: grid;
 	margin-bottom: 20px;
 }
 
+.solo {
+	grid-column: 1/-1;
+}
+
+.name {
+	line-height: 20px;
+}
+
+/* Home */
+#friends .item {
+	grid-template-columns: 2fr 3fr 1fr;
+}
+
 .item img {
-	width: 90px;
-	height: 90px;
 	border-radius: 50%;
+	height: 90px;
 	margin-right: 20px;
+	width: 90px;
 }
 
 .status {
@@ -30,4 +42,42 @@
 
 .severely-affected {
 	color: var(--tall-poppy);
+}
+
+/* Friend Requests */
+#friend-requests .item {
+	grid-template-columns: 1fr 2fr;
+	margin-bottom: 30px;
+}
+
+#friend-requests .list .item:not(:first-of-type) {
+	border-top: 1px solid var(--light-gray);
+	padding-top: 30px;
+}
+
+i {
+	font-size: 14px;
+}
+
+.action {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.action button {
+	border-radius: 7px;
+	font-size: 15px;
+	padding: 7px 25px;
+}
+
+.main {
+	background-color: var(--orange);
+	border: none;
+	color: #fff;
+}
+
+.secondary {
+	border: 1px solid var(--light-gray);
+	color: #000;
+	margin-left: 10px;
 }

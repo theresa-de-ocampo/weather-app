@@ -24,7 +24,7 @@
 		
 		<div class="item">
 			<img src="<?php echo "img/profile-pictures/".$f->profile_picture; ?>" />
-			<div><?php echo $f->fname." ".$f->lname; ?></div>
+			<div class="name"><?php echo $f->fname." ".$f->lname; ?></div>
 			<div class="status <?php echo str_replace(" ", "-", strtolower($f->status)); ?>">&#9673;</div>
 		</div>
 		<?php endforeach; ?>

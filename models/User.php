@@ -40,4 +40,13 @@ class User {
 		");
 		return $this->db->resultSet();
 	}
+
+	public function getFriendRequests($id) {
+		$this->db->query("
+			SELECT *
+			FROM `friend`
+			WHERE `to` = $id AND `status` = 'Pending'
+		");
+		return $this->db->resultSet();
+	}
 }
