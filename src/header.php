@@ -10,10 +10,12 @@
 		$fname = $account->fname;
 		$location = $account->location;
 		$icon = "out";
+		$logInLogOut = "src/sign-out.php";
 	}
 	else {
 		$user_id = $location = "";
 		$fname = "wwü";
 		$icon = "in";
+		$logInLogOut = "login.html";
 	}
 ?>
