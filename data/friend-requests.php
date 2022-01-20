@@ -18,13 +18,13 @@
 			$fr = $friend->getUser($friend_id);
 		?>
 		
-		<div class="item">
+		<div id="<?php echo $friend_id; ?>" class="item">
 			<img src="<?php echo "img/profile-pictures/".$fr->profile_picture; ?>" />
 			<div>
 				<div class="name"><?php echo $fr->fname." ".$fr->lname; ?></div>
 				<i><?php echo $fr->location; ?></i>
 			</div>
-			<div class="action solo">
+			<div class="actions solo">
 				<button
 					type="button" class="main"
 					data-user-id="<?php echo $user_id; ?>" data-friend-id="<?php echo $friend_id; ?>"
@@ -37,8 +37,8 @@
 					>
 					Delete
 				</button>
-			</div><!-- .action -->
-		</div>
+			</div><!-- .actions.solo -->
+		</div><!-- #{friend-id} -->
 		<?php endforeach; ?>
 	</div><!-- .list -->
 </section><!-- #friends -->

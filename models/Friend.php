@@ -17,4 +17,16 @@ class Friend extends User {
 		");
 		return $this->db->resultSet();
 	}
+
+	public function updateFriendRequest($from, $to, $status) {
+		$this->db->query("
+			UPDATE `friend`
+			SET `status` = ?
+			WHERE `from` = ? AND `to` = ?
+		");
+		$this->db->bind(1, $status);
+		$this->db->bind(2, $from);
+		$this->db->bind(3, $to);
+		return $this->db->execute();
+	}
 }

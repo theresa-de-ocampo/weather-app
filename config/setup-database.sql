@@ -18,7 +18,7 @@ CREATE TABLE `user` (
 CREATE TABLE `friend` (
 	`from` INT UNSIGNED NOT NULL,
 	`to` INT UNSIGNED NOT NULL,
-	`status` ENUM('Friends', 'Pending', 'Rejected', 'Blocked') DEFAULT 'Pending',
+	`status` ENUM('Friends', 'Pending', 'Blocked') DEFAULT 'Pending',
 
 	CONSTRAINT pk_friend PRIMARY KEY (`from`, `to`),
 	CONSTRAINT fk_friend_from FOREIGN KEY (`from`)
@@ -39,13 +39,13 @@ VALUES
 	(DEFAULT, 'Jesus', 'Lopez', '09279841873', 'Naic, PH', 'jesusdthird@gmail.com',
 		'$2y$10$y90BZ8Q/2gyBPqdAFXXDle7KIQ.VErpkzWNNZW8N2GEdkpadd8OiC', "2.jpg", DEFAULT),
 	(DEFAULT, 'Jovy', 'Busque', '031943584', 'Auckland, NZ', 'jovy_c@yahoo.com',
-		'$2y$10$Rzz.FIsCy5tTioESP0x2hea54NpXIfApGIxB4F4GAz8cnsWOv75me', "3.jpg", DEFAULT),
+		'$2y$10$Rzz.FIsCy5tTioESP0x2hea54NpXIfApGIxB4F4GAz8cnsWOv75me', "3.jpg", 'Moderately Affected'),
 	(DEFAULT, 'Allan', 'Busque', '031953486', 'Auckland, NZ', 'allan_busque@yahoo.com',
 		'$2y$10$jrKgPlicEXXraG5BYLmGiOyOEybsk6inmI/EmuDrweWqfmXLo/Rpa', "4.jpg", DEFAULT),
 	(DEFAULT, 'Aurora', 'Liberato', '09664892158', 'Masaya, PH', 'aurora.liberato@gmail.com',
 		'$2y$10$CtnzbINrxyH1wLupEyJ2U.ta2WbMK5PdJi8AXNPEK.dQffNpNr5.2', "5.jpg", DEFAULT),
 	(DEFAULT, 'Ryan', 'Nable', '09973921024', 'Masaya, PH', 'ryan.nable@gmail.com',
-		'$2y$10$nOpsIELnJbe5kQVWFiMKqOPX8MGprsty2Mto.1Uj7Cb0eNS6uPK7a', "6.jpg", DEFAULT),
+		'$2y$10$nOpsIELnJbe5kQVWFiMKqOPX8MGprsty2Mto.1Uj7Cb0eNS6uPK7a', "6.jpg", 'Severely Affected'),
 	(DEFAULT, 'Carlo', 'Robiso', '09179457832', 'Vigan, PH', 'carlo.robiso@gmail.com',
 		'$2y$10$jxR6Yl2Pzb422tKFtJBz2.SVXU3XLcAeNRQ4wzLz6TzF7Lh4w3OpW', "7.jpg", DEFAULT),
 	(DEFAULT, 'Cherryluz', 'Javier', '09184711285', 'Vigan, PH', 'cherry.javier@gmail.com',
@@ -70,6 +70,7 @@ VALUES
 INSERT INTO
 	`friend`
 VALUES
+	(2, 1, 'Pending'),
 	(1, 3, 'Friends'),
 	(1, 4, 'Friends'),
 	(1, 6, 'Friends'),

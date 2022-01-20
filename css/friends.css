@@ -49,12 +49,12 @@ i {
 	font-size: 14px;
 }
 
-.action {
+.actions {
 	margin-top: 10px;
 	text-align: center;
 }
 
-.action button {
+.actions button {
 	border-radius: 7px;
 	font-size: 15px;
 	padding: 7px 25px;
