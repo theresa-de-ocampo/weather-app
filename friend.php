@@ -58,12 +58,12 @@
 
 			<div id="friend-data">
 				<div class="item">
-					<div id="friend-location" class="label">Location</div>
-					<div class="value"><?php echo $f->location; ?></div>
+					<div class="label">Location</div>
+					<div id="friend-location" class="value"><?php echo $f->location; ?></div>
 				</div><!-- .item -->
 				<div class="item">
 					<div class="label">Temperature</div>
-					<div id="temperature" class="value"><span class="value">28</span>&#176; <span class="unit"></span></div>
+					<div id="temperature" class="value"><span class="value"></span>&#176; <span class="unit"></span></div>
 				</div><!-- .item -->
 				<div class="item">
 					<div class="label">Weather</div>
