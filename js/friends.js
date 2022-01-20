@@ -1,17 +1,49 @@
 // jshint esversion: 6
-$("main").load("data/friends.php");
+/* --------------------------- Friends --------------------------- */
+$("#friends-link").on("change", function() {
+	if (this.checked) {
+		$("section").remove();
+		$("main").load("data/friends.php", function() {
+			let $friends = $("#friends .item");
+			let friendsCache = [];
 
+			$friends.each(function() {
+				friendsCache.push({
+					element: $(this),
+					name: $(this).attr("data-name").trim().toLowerCase()
+				});
+			});
+
+			$("body").on("input", "#friends .search", function() {
+				let query = $(this).val().trim().toLowerCase();
+				let i;
+
+				friendsCache.forEach(function(friend) {
+					/* 	If search box becomes empty, index automatically becomes true.
+						So all of the elements in cache will be displayed. 
+					*/
+					i = 0;
+					if (query)
+						i = friend.name.indexOf(query);
+
+
+					if (i === -1)
+						friend.element.css("display", "none");
+					else
+						friend.element.css("display", "");
+				});
+			});
+		});
+	}
+});
+$("#friends-link").trigger("click");
+
+
+/* ----------------------- Friend Requests ----------------------- */
 $("#requests-link").on("change", function() {
 	if (this.checked) {
 		$("section").remove();
 		$("main").load("data/friend-requests.php");
-	}
-});
-
-$("#friends-link").on("change", function() {
-	if (this.checked) {
-		$("section").remove();
-		$("main").load("data/friends.php");
 	}
 });
 

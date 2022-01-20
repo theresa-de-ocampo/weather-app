@@ -20,13 +20,17 @@
 				$friend_id = $f->from;
 
 			$f = $friend->getUser($friend_id);
+			$name = $f->fname." ".$f->lname;
 		?>
-		
-		<a id="<?php echo $friend_id; ?>" class="item" href="friend.php?friend-id=<?php echo $friend_id; ?>">
+		<a 
+			id="<?php echo $friend_id; ?>" class="item" 
+			href="friend.php?friend-id=<?php echo $friend_id; ?>"
+			data-name="<?php echo $name; ?>"
+			>
 			<img src="<?php echo "img/profile-pictures/".$f->profile_picture; ?>" />
-			<div class="name"><?php echo $f->fname." ".$f->lname; ?></div>
+			<div class="name"><?php echo $name; ?></div>
 			<div class="status <?php echo str_replace(" ", "-", strtolower($f->status)); ?>">&#9673;</div>
-		</a><!-- #friend-id.item -->
+		</a><!-- #{friend-id}.item -->
 		<?php endforeach; ?>
 	</div><!-- .list -->
 </section><!-- #friends -->

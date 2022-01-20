@@ -40,7 +40,7 @@
 	<nav id="inner-navigation">
 		<footer>
 			<input id="requests-link" type="radio" name="radio">
-			<input id="friends-link" type="radio" name="radio" checked>
+			<input id="friends-link" type="radio" name="radio">
 			<input id="search-link" type="radio" name="radio">
 
 			<label for="requests-link"><i class="fas fa-users"></i></label>
