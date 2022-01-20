@@ -4,8 +4,9 @@
 	require_once "../config/config.php";
 	require_once "../lib/database-handler.php";
 	require_once "../models/User.php";
-	$user = new User();
-	$friend_requests = $user->getFriendRequests($user_id);
+	require_once "../models/Friend.php";
+	$friend = new Friend();
+	$friend_requests = $friend->getFriendRequests($user_id);
 ?>
 <section id="friend-requests">
 	<h2>Friend Requests</h2>
@@ -14,7 +15,7 @@
 		<?php
 		foreach ($friend_requests as $friend_request):
 			$friend_id = $friend_request->from;
-			$fr = $user->getUser($friend_id);
+			$fr = $friend->getUser($friend_id);
 		?>
 		
 		<div class="item">
@@ -24,8 +25,18 @@
 				<i><?php echo $fr->location; ?></i>
 			</div>
 			<div class="action solo">
-				<button type="button" class="main">Accept</button>
-				<button type="button" class="secondary">Delete</button>
+				<button
+					type="button" class="main"
+					data-user-id="<?php echo $user_id; ?>" data-friend-id="<?php echo $friend_id; ?>"
+					>
+					Accept
+				</button>
+				<button
+					type="button" class="secondary"
+					data-user-id="<?php echo $user_id; ?>" data-friend-id="<?php echo $friend_id; ?>"
+					>
+					Delete
+				</button>
 			</div><!-- .action -->
 		</div>
 		<?php endforeach; ?>

@@ -1,6 +1,6 @@
 <?php
 class User {
-	private $db;
+	protected $db;
 
 	public function __construct() {
 		$this->db = new Database();
@@ -30,23 +30,5 @@ class User {
 		$this->db->query("SELECT * FROM `user` WHERE `user_id` = ?");
 		$this->db->bind(1, $id);
 		return $this->db->resultRecord();
-	}
-
-	public function getFriends($id) {
-		$this->db->query("
-			SELECT *
-			FROM `friend`
-			WHERE (`from` = $id OR `to` = $id) AND `status` = 'Friends'
-		");
-		return $this->db->resultSet();
-	}
-
-	public function getFriendRequests($id) {
-		$this->db->query("
-			SELECT *
-			FROM `friend`
-			WHERE `to` = $id AND `status` = 'Pending'
-		");
-		return $this->db->resultSet();
 	}
 }
