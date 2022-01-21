@@ -16,12 +16,12 @@
 		foreach ($friend_requests as $friend_request):
 			$friend_id = $friend_request->from;
 			$fr = $friend->getUser($friend_id);
+			$name = $fr->fname." ".$fr->lname;
 		?>
-		
-		<div id="<?php echo $friend_id; ?>" class="item">
+		<div id="<?php echo $friend_id; ?>" class="item" data-name="<?php echo $name; ?>">
 			<img src="<?php echo "img/profile-pictures/".$fr->profile_picture; ?>" />
 			<div>
-				<div class="name"><?php echo $fr->fname." ".$fr->lname; ?></div>
+				<div class="name"><?php echo $name; ?></div>
 				<i><?php echo $fr->location; ?></i>
 			</div>
 			<div class="actions solo">
@@ -41,4 +41,4 @@
 		</div><!-- #{friend-id} -->
 		<?php endforeach; ?>
 	</div><!-- .list -->
-</section><!-- #friends -->
+</section><!-- #friend-requests -->

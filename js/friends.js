@@ -1,4 +1,24 @@
 // jshint esversion: 6
+function filterSearch(searchBox, cache) {
+	let query = $(searchBox).val().trim().toLowerCase();
+	let i;
+
+	cache.forEach(function(friend) {
+		/* 	If search box becomes empty, index automatically becomes true.
+			So all of the elements in cache will be displayed. 
+		*/
+		i = 0;
+		if (query)
+			i = friend.name.indexOf(query);
+
+
+		if (i === -1)
+			friend.element.css("display", "none");
+		else
+			friend.element.css("display", "");
+	});
+}
+
 /* --------------------------- Friends --------------------------- */
 $("#friends-link").on("change", function() {
 	if (this.checked) {
@@ -15,23 +35,7 @@ $("#friends-link").on("change", function() {
 			});
 
 			$("body").on("input", "#friends .search", function() {
-				let query = $(this).val().trim().toLowerCase();
-				let i;
-
-				friendsCache.forEach(function(friend) {
-					/* 	If search box becomes empty, index automatically becomes true.
-						So all of the elements in cache will be displayed. 
-					*/
-					i = 0;
-					if (query)
-						i = friend.name.indexOf(query);
-
-
-					if (i === -1)
-						friend.element.css("display", "none");
-					else
-						friend.element.css("display", "");
-				});
+				filterSearch(this, friendsCache);
 			});
 		});
 	}
@@ -43,7 +47,21 @@ $("#friends-link").trigger("click");
 $("#requests-link").on("change", function() {
 	if (this.checked) {
 		$("section").remove();
-		$("main").load("data/friend-requests.php");
+		$("main").load("data/friend-requests.php", function() {
+			let $friendRequests = $("#friend-requests .item");
+			let friendRequestsCache = [];
+
+			$friendRequests.each(function() {
+				friendRequestsCache.push({
+					element: $(this),
+					name: $(this).attr("data-name").trim().toLowerCase()
+				});
+			});
+
+			$("body").on("input", "#friend-requests .search", function() {
+				filterSearch(this, friendRequestsCache);
+			});
+		});
 	}
 });
 
