@@ -14,13 +14,8 @@
 	<div class="list">
 		<?php
 		foreach ($friends as $f):
-			if ($f->from == $user_id)
-				$friend_id = $f->to;
-			else
-				$friend_id = $f->from;
-
-			$f = $friend->getUser($friend_id);
 			$name = $f->fname." ".$f->lname;
+			$friend_id = $f->friend_id;
 		?>
 		<a 
 			id="<?php echo $friend_id; ?>" class="item" 

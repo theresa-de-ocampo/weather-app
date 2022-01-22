@@ -9,7 +9,7 @@ section {
 	padding: 100px 50px 50px 50px;
 }
 
-.center {
+#friend {
 	text-align: center;
 }
 
@@ -22,8 +22,8 @@ h2 {
 	margin-bottom: 0;
 }
 
-.status {
-	text-align: center;
+#friend-data {
+	text-align: left;
 }
 
 div.label {
@@ -41,4 +41,19 @@ div.value {
 a {
 	color: inherit;
 	text-decoration: none;
+}
+
+@media screen and (min-width: 550px) {
+	#friend img {
+		height: 50vh;
+		width: auto;
+	}
+
+	#friend h2 {
+		font-size: 1.2em;
+	}
+
+	#friend-data {
+		text-align: center;
+	}
 }

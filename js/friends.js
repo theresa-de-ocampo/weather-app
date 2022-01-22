@@ -86,3 +86,11 @@ $("body").on("click", "#friend-requests button", function() {
 			alert("Sorry, an unexpected error occurred.");
 	});
 });
+
+/* ----------------------- Search List ----------------------- */
+$("#search-link").on("change", function() {
+	if (this.checked) {
+		$("section").remove();
+		$("main").load("data/search-list.php");
+	}
+});

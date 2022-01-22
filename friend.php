@@ -51,7 +51,7 @@
 		<section id="friend">
 			<img src="img/profile-pictures/<?php echo $f->profile_picture; ?>" alt="Profile Picture" />
 			<h2><?php echo $f->fname." ".$f->lname; ?></h2>
-			<div class="center">
+			<div>
 				<span class="status <?php echo str_replace(" ", "-", strtolower($f->status)); ?>">&#9673;</span>
 				<?php echo $f->status; ?>
 			</div>

@@ -20,7 +20,7 @@
 
 /* Home */
 #friends .item {
-	grid-template-columns: 2fr 3fr 1fr;
+	grid-template-columns: 110px 3fr 1fr;
 }
 
 .item img {
@@ -34,13 +34,15 @@
 	text-align: right;
 }
 
-/* Friend Requests */
-#friend-requests .item {
-	grid-template-columns: 1fr 2fr;
+/* Friend Requests & Search List */
+#friend-requests .item,
+#search-list .item {
+	grid-template-columns: 110px 1fr;
 	margin-bottom: 30px;
 }
 
-#friend-requests .list .item:not(:first-of-type) {
+#friend-requests .list .item:not(:first-of-type),
+#search-list .list .item:not(:first-of-type) {
 	border-top: 1px solid var(--light-gray);
 	padding-top: 30px;
 }
