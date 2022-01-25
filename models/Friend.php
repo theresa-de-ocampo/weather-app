@@ -61,7 +61,8 @@ class Friend extends User {
 				`lname`,
 				`location`,
 				`profile_picture`,
-				`friend`.`status`
+				`friend`.`status`,
+				`from`
 			FROM
 				`user`
 			LEFT JOIN `friend`
@@ -80,5 +81,12 @@ class Friend extends User {
 				)
 		");
 		return $this->db->resultSet();
+	}
+
+	public function sendFriendRequest($from, $to) {
+		$this->db->query("INSERT INTO `friend` (`from`, `to`) VALUES (?, ?)");
+		$this->db->bind(1, $from);
+		$this->db->bind(2, $to);
+		return $this->db->execute();
 	}
 }

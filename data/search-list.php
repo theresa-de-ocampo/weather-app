@@ -26,23 +26,32 @@
 			<div class="actions solo">
 				<?php if (is_null($not_friend->status)): ?>
 				<button
-					type="button" class="main"
+					type="button" class="main add-friend"
 					data-user-id="<?php echo $user_id; ?>" data-not-friend-id="<?php echo $not_friend_id; ?>">
 					Add Friend
 				</button>
 				<?php else: ?>
+				<?php if ($not_friend->from == $user_id): ?>
 				<button
-					type="button" class="main"
+					type="button" class="secondary cancel-request"
+					data-user-id="<?php echo $user_id; ?>" data-not-friend-id="<?php echo $not_friend_id; ?>"
+					>
+					Cancel Request
+				</button>
+				<?php else: ?>
+				<button
+					type="button" class="main accept"
 					data-user-id="<?php echo $user_id; ?>" data-not-friend-id="<?php echo $not_friend_id; ?>"
 					>
 					Accept
 				</button>
 				<button
-					type="button" class="secondary"
+					type="button" class="secondary delete"
 					data-user-id="<?php echo $user_id; ?>" data-not-friend-id="<?php echo $not_friend_id; ?>"
 					>
 					Delete
 				</button>
+				<?php endif; ?>
 				<?php endif; ?>
 			</div><!-- .actions.solo -->
 		</div><!-- #{friend-id} -->

@@ -94,3 +94,74 @@ $("#search-link").on("change", function() {
 		$("main").load("data/search-list.php");
 	}
 });
+
+$("body").on("click", "#search-list button", function() {
+	let url, from, to, newStatus;
+	let $button = $(this);
+	let userId = $button.attr("data-user-id");
+	let potentialFriendId = $button.attr("data-not-friend-id");
+
+	if ($button.hasClass("add-friend")) {
+		url = "src/send-friend-request.php";
+		from = userId;
+		to = potentialFriendId;
+		newStatus = "Cancel Request";
+	}
+	else if ($button.hasClass("cancel-request")) {
+		url = "src/delete-friend-request.php";
+		from = userId;
+		to = potentialFriendId;
+		newStatus = "Add Friend";
+	}
+	else if ($button.hasClass("delete")) {
+		url = "src/delete-friend-request.php";
+		from = potentialFriendId;
+		to = userId;
+		newStatus = "Add Friend";
+	}
+	else {
+		url = "src/accept-friend-request.php";
+		from = potentialFriendId;
+		to = userId;
+		newStatus = "Deleted";
+	}
+
+	$.ajax({
+		url: url,
+		method: "post",
+		data: {from: from, to: to}
+	})
+	.done(function(status) {
+		if (status) {
+			switch (newStatus) {
+				case "Cancel Request":
+					$("#" + potentialFriendId + " .actions.solo").html(`
+						<button
+							type="button" class="secondary cancel-request"
+							data-user-id="${userId}" data-not-friend-id="${potentialFriendId}"
+							>
+							Cancel Request
+						</button>
+					`);
+					break;
+				case "Add Friend":
+					$("#" + potentialFriendId + " .actions.solo").html(`
+						<button
+							type="button" class="main add-friend"
+							data-user-id="${userId}" data-not-friend-id="${potentialFriendId}"
+							>
+							Add Friend
+						</button>
+					`);
+					break;
+				case "Deleted":
+					$("#" + potentialFriendId).remove();
+					break;
+				default:
+					alert("Sorry, an unexpected error occurred.");
+			}
+		}
+		else
+			alert("Sorry, an unexpected error occurred.");
+	});
+});

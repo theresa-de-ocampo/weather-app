@@ -53,7 +53,7 @@ VALUES
 	(DEFAULT, 'Lych', 'Caballero', '09104873984', 'Santa Mesa, PH', 'lych.caballero@gmail.com',
 		'$2y$10$Gd3K4OEADIR4B5TqKCNBJOtjdm17n1RqPR14BpGK2cyIRyFq6kaOK', DEFAULT, DEFAULT),
 	(DEFAULT, 'Jericho', 'Lacsamana', '09494023612', 'Santa Mesa, PH', 'eris.lacz@gmail.com',
-		'$2y$10$cYzfGs20..qEjeyx2Fw18eIRS8lfQvrYkhTPq9ZP4V0514vQP75u2', DEFAULT, DEFAULT),
+		'$2y$10$cYzfGs20..qEjeyx2Fw18eIRS8lfQvrYkhTPq9ZP4V0514vQP75u2', "10.jpg", DEFAULT),
 	(DEFAULT, 'Kiev', 'Albarico', '09053892384', 'Tanza, PH', 'kiev.albarico@gmail.com',
 		'$2y$10$dF99KWhXO7oNnuxOwpHzDeQFp00Qt2q94snn/GdLtdyitdX88mutC', DEFAULT, DEFAULT),
 	(DEFAULT, 'Rafael', 'Quiniquini', '09204893128', 'Naic, PH', 'rafael07@gmail.com',
@@ -75,5 +75,6 @@ VALUES
 	(1, 4, 'Friends'),
 	(1, 6, 'Friends'),
 	(1, 7, 'Friends'),
+	(1, 10, 'Pending'),
 	(14, 1, 'Pending'),
 	(16, 1, 'Pending');
