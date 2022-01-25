@@ -91,7 +91,21 @@ $("body").on("click", "#friend-requests button", function() {
 $("#search-link").on("change", function() {
 	if (this.checked) {
 		$("section").remove();
-		$("main").load("data/search-list.php");
+		$("main").load("data/search-list.php", function() {
+			let $potentialFriends = $("#search-list .item");
+			let potentialFriendsCache = [];
+
+			$potentialFriends.each(function() {
+				potentialFriendsCache.push({
+					element: $(this),
+					name: $(this).attr("data-name").trim().toLowerCase()
+				});
+			});
+
+			$("body").on("input", "#search-list .search", function() {
+				filterSearch(this, potentialFriendsCache);
+			});
+		});
 	}
 });
 
