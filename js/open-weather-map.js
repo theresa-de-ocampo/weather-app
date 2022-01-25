@@ -11,36 +11,17 @@ imperial = {
 
 let openWeatherMap = {
 	"apiKey": "364a5841b429913e54511e8bb51ba359",
-	fetchWeatherByCityAndCountry: function(location, unit = "metric", setLocation = false) {
-		fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${this.apiKey}`)
-		.then(response => response.json())
-		.then(data => displayWeather(data, unit, setLocation));
-	},
-	fetchWeatherByCoords: function(latitude, longitude, unit = "metric", setLocation = false) {
+	fetchWeather: function(latitude, longitude, unit = "metric", setLocation = false) {
 		fetch(
-			`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${unit}&appid=${this.apiKey}`
+			`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely&units=${unit}&appid=${this.apiKey}`
 		)
 		.then(response => response.json())
 		.then(data => displayWeather(data, unit, setLocation));
 	},
-	displayWeather: function(data, unit, setLocation) {
-		console.log(data);
-		if (setLocation)
-			$("#location").text(data.name + ", " + data.sys.country);
-
-		// Quick Weather Section
-		$("#temperature .value").text(Math.round(data.main.temp));
-		$("#temperature .unit").text(window[unit].temperature);
-		$("#description").text(strToTitleCase(data.weather[0].description));
-
-		// Weather Details Section
-		$("#sunrise").text(window.moment(data.sys.sunrise * 1000).format("hh:mm a"));
-		$("#sunset").text(window.moment(data.sys.sunset * 1000).format("hh:mm a"));
-		$("#humidity .value").text(data.main.humidity);
-		$("#wind-speed .value").text(data.wind.speed);
-		$("#wind-speed .unit").text(window[unit].wind);
-		$("#pressure .value").text(data.main.pressure);
-		$("#visibility .value").text(data.visibility / 1000);
+	directGeocoding: function(location) {
+		return fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=${this.apiKey}`)
+		.then(response => response.json())
+		.then(data => { return data; });
 	},
 	reverseGeocoding: function(latitude, longitude) {
 		return fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${this.apiKey}`)
@@ -53,7 +34,7 @@ let openWeatherMap = {
 		navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
 		function onSuccess(position) {
-			that.fetchWeatherByCoords(position.coords.latitude, position.coords.longitude, "metric", true);
+			that.fetchWeather(position.coords.latitude, position.coords.longitude, "metric", true);
 		}
 
 		function onError(error) {
