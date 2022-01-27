@@ -83,7 +83,10 @@
 			</table>
 		</section><!-- #weather-details -->
 
-		
+		<section id="hourly-forecast">
+			<h2>Hourly Forecast</h2>
+			<div><canvas id="chart"></canvas></div>
+		</section><!-- #hourly-forecast -->
 	</main>
 
 	<script src="js/jquery-3.6.0.min.js"></script>
@@ -91,6 +94,7 @@
 	<script src="js/moment-2.29.1.min.js"></script>
 	<script src="js/util.js"></script>
 	<script src="js/outer-navigation.js"></script>
+	<script src="js/chart-3.7.0.min.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
