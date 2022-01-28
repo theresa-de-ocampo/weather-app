@@ -8,7 +8,7 @@
 	<meta 
 		http-equiv="Content-Security-Policy"
 		content="
-			default-src 'self' https://api.openweathermap.org/ data: gap: https://ssl.gstatic.com;
+			default-src 'self' https://api.openweathermap.org/ http://openweathermap.org/img/wn/ data: gap: https://ssl.gstatic.com;
 			media-src 'self';
 			style-src 'self' https://fonts.googleapis.com;
 			font-src 'self' https://fonts.gstatic.com;
@@ -87,6 +87,11 @@
 			<h2>Hourly Forecast</h2>
 			<div><canvas id="chart"></canvas></div>
 		</section><!-- #hourly-forecast -->
+
+		<section id="daily-forecast">
+				<div id="today"></div>
+				<div id="forecast-wrapper"></div>
+		</section><!-- #daily-forecast -->
 	</main>
 
 	<script src="js/jquery-3.6.0.min.js"></script>

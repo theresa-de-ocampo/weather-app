@@ -1,5 +1,6 @@
 // jshint esversion: 6
 function displayWeather(data, unit, setLocation) {
+	console.log(data);
 	if (setLocation) {
 		openWeatherMap.reverseGeocoding(data.lat, data.lon)
 		.then(data => {
@@ -48,8 +49,9 @@ function displayWeather(data, unit, setLocation) {
 			data: temperature,
 			fill: true,
 			backgroundColor: gradient,
-			borderColor: "#E5E5E5",
-			pointBackgroundColor: "#ec6e4c"
+			borderColor: "#e5e5e5",
+			pointBackgroundColor: "#ec6e4c",
+			tension: 0.5
 		}]
 	};
 
@@ -90,6 +92,33 @@ function displayWeather(data, unit, setLocation) {
 		}
 	};
 	const chart = new Chart(context, config);
+
+	// Daily Forecast
+	let forecastItems = "";
+	data.daily.forEach(function(day, i) {
+		if (i == 0)
+			$("#today").html(`
+				<h2>Daily Forecast &#8594;</h2>
+				<div>
+				<img src="http://openweathermap.org/img/wn//${day.weather[0].icon}@4x.png" alt="Weather Icon" class="icon" />
+				<div class="data">
+					<div class="day">${window.moment(day.dt * 1000).format("dddd")}</div>
+					<div class="temperature">Day - ${day.temp.day}&#176; ${temperatureUnit}</div>
+					<div class="temperature">Night - ${day.temp.night}&#176; ${temperatureUnit}</div>
+				</div><!-- .data -->
+				</div>
+			`);
+		else
+			forecastItems += `
+				<div class="forecast-item">
+					<div class="day">${window.moment(day.dt * 1000).format("dddd")}</div>
+					<img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="Weather Icon" class="icon" />
+					<div class="temperature">Day -  ${day.temp.day}&#176; ${temperatureUnit}</div>
+					<div class="temperature">Night - ${day.temp.night}&#176; ${temperatureUnit}</div>
+				</div><!-- .forecast-item -->
+			`;
+	});
+	$("#forecast-wrapper").html(forecastItems);
 }
 
 const userId = $("#fname").attr("data-user-id");
