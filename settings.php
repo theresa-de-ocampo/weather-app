@@ -74,7 +74,7 @@
 			<label for="confirm-password">Confirm Password <span class="required">*</span></label>
 			<input id="confirm-password" type="password" name="confirm-password" required />
 
-			<button id="save" type="button" name="save">SAVE</button>
+			<button id="save" type="button" name="save" class="solo">Save</button>
 		</section><!-- #settings -->
 	</main>
 
