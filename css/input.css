@@ -27,6 +27,7 @@ select {
 }
 
 main label,
+form label,
 figcaption {
 	display: block;
 	margin-top: 25px;
@@ -37,7 +38,8 @@ figcaption {
 	color: var(--red);
 }
 
-main label {
+main label,
+form label {
 	font-size: 17px;
 }
 
