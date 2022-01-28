@@ -1,4 +1,9 @@
-<?php require_once "src/header.php"; ?>
+<?php
+	require_once "src/header.php";
+	$user_id = $_SESSION["account-verified"];
+	$user = new User();
+	$u = $user->getUser($user_id);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,35 +43,35 @@
 
 	<main>
 		<section id="settings">
-			<img src="img/profile-pictures/1.jpg" />
+			<img src="img/profile-pictures/<?php echo $u->profile_picture; ?>" />
 
 			<label for="status">Status <span class="required">*</span></label>
-			<select id="status" name="status">
+			<select id="status" name="status" data-value="<?php echo $u->status; ?>">
 				<option value="safe">Safe</option>
 				<option value="moderately-affected">Moderately Affected</option>
 				<option value="severely-affected">Severely Affected</option>
 			</select>
 
 			<label for="unit">Unit <span class="required">*</span></label>
-			<select id="unit" name="unit">
+			<select id="unit" name="unit" data-value="<?php echo $u->unit; ?>">
 				<option value="metric">Metric</option>
 				<option value="imperial">Imperial</option>
 			</select>
 
 			<label for="fname">First Name <span class="required">*</span></label>
-			<input id="fname" type="text" name="fname" required />
+			<input id="fname" type="text" name="fname" value="<?php echo $u->fname; ?>" required />
 
 			<label for="lname">Last Name <span class="required">*</span></label>
-			<input id="lname" type="text" name="lname" required />
+			<input id="lname" type="text" name="lname" value="<?php echo $u->lname; ?>" required />
 			
 			<label for="contact-no">Contact No. <span class="required">*</span></label>
-			<input id="contact-no" type="text" name="contact-no" required />
+			<input id="contact-no" type="text" name="contact-no" value="<?php echo $u->contact_no; ?>" required />
 
 			<label for="city-country-code">City & Country Code <span class="required">*</span></label>
-			<input id="city-country-code" type="text" name="city-country-code" required />
+			<input id="city-country-code" type="text" name="city-country-code" value="<?php echo $u->location; ?>" required />
 
 			<label for="email">Email <span class="required">*</span></label>
-			<input id="email" type="email" name="email" required />
+			<input id="email" type="email" name="email" value="<?php echo $u->email; ?>" required />
 
 			<label for="password">Password <span class="required">*</span></label>
 			<input id="password" type="password" name="password" required />
@@ -80,5 +85,6 @@
 
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script src="js/outer-navigation.js"></script>
+	<script src="js/settings.js"></script>
 </body>
 </html>
