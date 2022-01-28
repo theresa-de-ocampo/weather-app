@@ -20,7 +20,7 @@
 		<ul>
 			<li><a href="index.php">Home</a></li>
 			<li><a href="friends.php" class="active requires-login">Friends</a></li>
-			<li><a href="#" class="requires-login">Settings</a></li>
+			<li><a href="settings.php" class="requires-login">Settings</a></li>
 			<li><a href="#">Share</a></li>
 		</ul>
 	</nav><!-- #outer-navigation -->

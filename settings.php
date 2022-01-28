@@ -19,9 +19,9 @@
 <body>
 	<nav id="outer-navigation">
 		<ul>
-			<li><a href="index.php" class="active">Home</a></li>
+			<li><a href="index.php">Home</a></li>
 			<li><a href="friends.php" class="requires-login">Friends</a></li>
-			<li><a href="settings.php" class="requires-login">Settings</a></li>
+			<li><a href="settings.php" class="requires-login" class="active">Settings</a></li>
 			<li><a href="#">Share</a></li>
 		</ul>
 	</nav><!-- #outer-navigation -->
