@@ -1,6 +1,5 @@
 // jshint esversion: 6
 function displayWeather(data, unit, setLocation) {
-	console.log(data);
 	if (setLocation) {
 		openWeatherMap.reverseGeocoding(data.lat, data.lon)
 		.then(data => {
@@ -121,7 +120,6 @@ function displayWeather(data, unit, setLocation) {
 	$("#forecast-wrapper").html(forecastItems);
 }
 
-const userId = $("#fname").attr("data-user-id");
 if (userId !== "") {
 	openWeatherMap.directGeocoding($("#location").text())
 	.then(data => {

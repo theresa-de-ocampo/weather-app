@@ -1,3 +1,4 @@
+// jshint esversion: 6
 $("#check-menu").on("change", function() {
 	if (this.checked) {
 		$("#outer-navigation").css("visibility", "visible");
@@ -9,6 +10,7 @@ $("#check-menu").on("change", function() {
 	}
 });
 
+const userId = $("#display-name").attr("data-user-id");
 $("#outer-navigation ul li a").on("click", function(e) {
 	$this = $(this);
 	if ($this.hasClass("requires-login") && userId === "") {
