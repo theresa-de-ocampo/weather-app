@@ -31,15 +31,15 @@
 <body>
 	<nav id="outer-navigation">
 		<ul>
-			<li><a href="<?php echo $logInLogOut; ?>">Home</a></li>
+			<li><a href="index.php">Home</a></li>
 			<li><a href="friends.php" class="active requires-login">Friends</a></li>
-			<li><a href="#" class="requires-login">Settings</a></li>
+			<li><a href="settings.php" class="requires-login">Settings</a></li>
 			<li><a href="#">Share</a></li>
 		</ul>
 	</nav><!-- #outer-navigation -->
 
 	<header>
-		<a href="login.html" class="fas fa-sign-<?php echo $icon; ?>-alt"></a>
+		<a href="<?php echo $logInLogOut; ?>" class="fas fa-sign-<?php echo $icon; ?>-alt"></a>
 		<div class="data">
 			<p id="fname" data-user-id="<?php echo $user_id; ?>"><?php echo $fname; ?></p>
 			<p id="location"><?php echo $location; ?></p>
