@@ -1,4 +1,5 @@
-input {
+input:not(#check-menu),
+select {
 	background-color: rgba(255, 255, 255, 0.5);
 	border-radius: 5px;
 	border: 1px solid var(--light-gray);
@@ -11,6 +12,57 @@ input {
 	width: 100%;
 }
 
-input:focus {
+input:not(#check-menu):focus {
 	border-color: var(--charade);
+}
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background-image: url("../img/down-arrow.svg");
+	background-position: right 15px center;
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	padding: 0 45px 0 15px;
+}
+
+main label,
+figcaption {
+	display: block;
+	margin-top: 25px;
+	color: var(--gun-powder);
+}
+
+.required {
+	color: var(--red);
+}
+
+main label {
+	font-size: 17px;
+}
+
+input[type="checkbox"]:not(#check-menu) {
+	width: unset;
+}
+
+input[type="checkbox"]:not(#check-menu), .show-password-label {
+	display: inline-block;
+	margin-top: 20px;
+	vertical-align: middle;
+}
+
+button {
+	background-color: var(--orange);
+	border-radius: 5px;
+	border: none;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 700;
+	height: 48px;
+	line-height: 22px;
+	margin-top: 30px;
+	padding: 12px 29px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
 }

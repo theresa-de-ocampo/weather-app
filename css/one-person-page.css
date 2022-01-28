@@ -1,0 +1,15 @@
+main {
+	background-image: url("../img/light-gray-background.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+section {
+	padding: 100px 50px 50px 50px;
+}
+
+img {
+	border-radius: 50%;
+	width: 100%;
+}

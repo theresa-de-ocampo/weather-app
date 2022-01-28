@@ -24,6 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="css/general.css" />
 	<link rel="stylesheet" type="text/css" href="css/outer-navigation-menu.css" />
 	<link rel="stylesheet" type="text/css" href="css/weather-status.css" />
+	<link rel="stylesheet" type="text/css" href="css/one-person-page.css" />
 	<link rel="stylesheet" type="text/css" href="css/friend.css" />
 	<title>WWÜ</title>
 </head>

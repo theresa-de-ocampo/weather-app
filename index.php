@@ -8,7 +8,8 @@
 	<meta 
 		http-equiv="Content-Security-Policy"
 		content="
-			default-src 'self' https://api.openweathermap.org/ http://openweathermap.org/img/wn/ data: gap: https://ssl.gstatic.com;
+			default-src 'self' https://api.openweathermap.org/ http://openweathermap.org/img/wn/
+				data: gap: https://ssl.gstatic.com;
 			media-src 'self';
 			style-src 'self' https://fonts.googleapis.com;
 			font-src 'self' https://fonts.gstatic.com;
@@ -28,7 +29,7 @@
 		<ul>
 			<li><a href="index.php" class="active">Home</a></li>
 			<li><a href="friends.php" class="requires-login">Friends</a></li>
-			<li><a href="#" class="requires-login">Settings</a></li>
+			<li><a href="settings.php" class="requires-login">Settings</a></li>
 			<li><a href="#">Share</a></li>
 		</ul>
 	</nav><!-- #outer-navigation -->
