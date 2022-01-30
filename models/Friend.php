@@ -22,6 +22,22 @@ class Friend extends User {
 		return $this->db->resultSet();
 	}
 
+	public function getFriendIds($id) {
+		$this->db->query("
+			SELECT
+				`user_id`
+			FROM
+				`user`
+			INNER JOIN `friend`
+				ON `user_id` = `from` OR `user_id` =`to`
+			WHERE
+				(`from` = $id OR `to` = $id) AND
+				`friend`.`status` = 'Friends' AND
+				`user_id` != $id
+		");
+		return $this->db->resultSetOneColumn();
+	}
+
 	public function getFriendRequests($id) {
 		$this->db->query("
 			SELECT *
@@ -53,40 +69,30 @@ class Friend extends User {
 		return $this->db->execute();
 	}
 
-	public function getNotFriends($id) {
-		$this->db->query("
-			SELECT 
-				`user_id`,
-				`fname`,
-				`lname`,
-				`location`,
-				`profile_picture`,
-				`friend`.`status`,
-				`from`
-			FROM
-				`user`
-			LEFT JOIN `friend`
-				ON `user_id` = `from` OR `user_id` =`to`
-			WHERE
-				`user_id` NOT IN (
-					SELECT
-						`user_id`
-					FROM
-						`user`
-					INNER JOIN `friend`
-						ON `user_id` = `from` OR `user_id` =`to`
-					WHERE
-						(`from` = $id OR `to` = $id) AND
-						`friend`.`status` = 'Friends'
-				)
-		");
-		return $this->db->resultSet();
-	}
-
 	public function sendFriendRequest($from, $to) {
 		$this->db->query("INSERT INTO `friend` (`from`, `to`) VALUES (?, ?)");
 		$this->db->bind(1, $from);
 		$this->db->bind(2, $to);
 		return $this->db->execute();
+	}
+
+	public function checkForRequest($base_id, $check_id) {
+		$this->db->query("
+			SELECT
+				`user_id`,
+				`from`
+			FROM
+				`user`
+			INNER JOIN `friend`
+				ON `user_id` = `from` OR `user_id` =`to`
+			WHERE
+				(
+					(`from` = $base_id AND `to` = $check_id) OR
+					(`from` = $check_id AND `to` = $base_id)
+				) AND
+				`friend`.`status` = 'Pending' AND
+				`user_id` != $base_id
+		");
+		return $this->db->resultRecord();
 	}
 }

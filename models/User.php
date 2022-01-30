@@ -31,4 +31,9 @@ class User {
 		$this->db->bind(1, $id);
 		return $this->db->resultRecord();
 	}
+
+	public function getUsers() {
+		$this->db->query(" SELECT `user_id`, `fname`, `lname`, `location`, `profile_picture` FROM `user`");
+		return $this->db->resultSet();
+	}
 }
