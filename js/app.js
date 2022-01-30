@@ -123,7 +123,8 @@ function displayWeather(data, unit, setLocation) {
 if (userId !== "") {
 	openWeatherMap.directGeocoding($("#location").text())
 	.then(data => {
-		openWeatherMap.fetchWeather(data[0].lat, data[0].lon);
+		const unit = $("header").attr("data-unit");
+		openWeatherMap.fetchWeather(data[0].lat, data[0].lon, unit);
 	});
 }
 else

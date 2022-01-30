@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$unit = "metric";
 	if (isset($_SESSION["account-verified"])) {
 		$user_id = $_SESSION["account-verified"];
 		require_once "config/config.php";
@@ -11,6 +12,7 @@
 		$location = $account->location;
 		$icon = "out";
 		$logInLogOut = "src/sign-out.php";
+		$unit = strtolower($account->unit);
 	}
 	else {
 		$user_id = $location = "";

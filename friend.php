@@ -38,7 +38,7 @@
 		</ul>
 	</nav><!-- #outer-navigation -->
 
-	<header>
+	<header data-unit="<?php echo $unit; ?>">
 		<a href="<?php echo $logInLogOut; ?>" class="fas fa-sign-<?php echo $icon; ?>-alt"></a>
 		<div class="data">
 			<p id="fname" data-user-id="<?php echo $user_id; ?>"><?php echo $fname; ?></p>
