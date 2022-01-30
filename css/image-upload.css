@@ -1,0 +1,43 @@
+#drop-area {
+	align-items: center;
+	border: 2px dashed var(--light-gray);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 50%;
+}
+
+#drop-area.active {
+	border: 2px solid var(--light-gray);
+}
+
+#drop-area img {
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.fa-cloud-upload-alt {
+	color: var(--orange);
+	cursor: default;
+	font-size: 100px;
+	margin-bottom: 10px;
+	transition: font-size ease 0.8s;
+}
+
+#drop-area > div:nth-of-type(2) {
+	color: var(--orange);
+	font-size: 30px;
+	font-weight: 500;
+}
+
+#drop-area > div:nth-of-type(3) {
+	color: var(--orange);
+	font-size: 25px;
+	font-weight: 500;
+	margin: 40px 0;
+}
+
+#drop-area + input {
+	display: none;
+}
