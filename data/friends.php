@@ -10,6 +10,7 @@
 ?>
 <section id="friends">
 	<h2>Friends</h2>
+	<?php if (!empty($friends)): ?>
 	<input class="search" type="text" placeholder="Search" />
 	<div class="list">
 		<?php
@@ -28,4 +29,12 @@
 		</a><!-- #{friend-id}.item -->
 		<?php endforeach; ?>
 	</div><!-- .list -->
+	<?php else: ?>
+	<div class="empty-state">
+		<p>
+			Find your friends! <span class="optional">Once you do, you'll see their weather status and contact information.</span>
+		</p>
+		<button id="get-started" type="button" class="main">Get Started</button>
+	</div><!-- .empty-state -->
+	<?php endif; ?>
 </section><!-- #friends -->

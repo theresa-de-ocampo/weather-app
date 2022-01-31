@@ -10,6 +10,7 @@
 ?>
 <section id="friend-requests">
 	<h2>Friend Requests</h2>
+	<?php if (!empty($friend_requests)): ?>
 	<input class="search" type="text" placeholder="Search" />
 	<div class="list">
 		<?php
@@ -41,4 +42,9 @@
 		</div><!-- #{friend-id} -->
 		<?php endforeach; ?>
 	</div><!-- .list -->
+	<?php else: ?>
+	<div class="empty-state">
+		<p>You currently don't have any friend requests.</p>
+	</div><!-- .empty-state -->
+	<?php endif; ?>
 </section><!-- #friend-requests -->

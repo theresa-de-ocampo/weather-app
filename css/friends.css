@@ -18,6 +18,14 @@
 	line-height: 20px;
 }
 
+.empty-state {
+	text-align: center;
+}
+
+.empty-state p {
+	margin: 5vh 0;
+}
+
 /* Home */
 #friends .item {
 	grid-template-columns: 110px 3fr 1fr;
@@ -56,7 +64,8 @@ i {
 	text-align: center;
 }
 
-.actions button {
+.actions button,
+.empty-state button {
 	border-radius: 7px;
 	font-size: 15px;
 	padding: 7px 25px;
@@ -72,4 +81,10 @@ i {
 	border: 1px solid var(--light-gray);
 	color: #000;
 	margin-left: 10px;
+}
+
+@media screen and (min-width: 550px) {
+	.empty-state .optional {
+		display: none;
+	}
 }

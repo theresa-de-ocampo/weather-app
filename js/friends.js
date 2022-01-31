@@ -41,6 +41,9 @@ $("#friends-link").on("change", function() {
 	}
 });
 $("#friends-link").trigger("click");
+$("body").on("click", "#get-started", function() {
+	$("#search-link").trigger("click");
+});
 
 
 /* ----------------------- Friend Requests ----------------------- */
@@ -69,10 +72,15 @@ $("body").on("click", "#friend-requests button", function() {
 	let url;
 	let $button = $(this);
 	let friendId = $button.attr("data-friend-id");
-	if ($button.hasClass("main"))
+	let successMessage;
+	if ($button.hasClass("main")) {
 		url = "src/accept-friend-request.php";
-	else
+		successMessage = "Friend request was successfully accepted";
+	}
+	else {
 		url = "src/delete-friend-request.php";
+		successMessage = "Friend request was successfully deleted";
+	}
 
 	$.ajax({
 		url: url,
@@ -80,8 +88,10 @@ $("body").on("click", "#friend-requests button", function() {
 		data: {from: friendId, to: $button.attr("data-user-id")}
 	})
 	.done(function(status) {
-		if (status)
+		if (status) {
 			$("#" + friendId).remove();
+			alert(successMessage);
+		}
 		else
 			alert("Sorry, an unexpected error occurred.");
 	});
@@ -114,6 +124,7 @@ $("body").on("click", "#search-list button", function() {
 	let $button = $(this);
 	let userId = $button.attr("data-user-id");
 	let potentialFriendId = $button.attr("data-not-friend-id");
+	let successMessage;
 
 	if ($button.hasClass("add-friend")) {
 		url = "src/send-friend-request.php";
@@ -138,6 +149,7 @@ $("body").on("click", "#search-list button", function() {
 		from = potentialFriendId;
 		to = userId;
 		newStatus = "Deleted";
+		successMessage = "Friend request was successfully accepted!";
 	}
 
 	$.ajax({
@@ -170,6 +182,7 @@ $("body").on("click", "#search-list button", function() {
 					break;
 				case "Deleted":
 					$("#" + potentialFriendId).remove();
+					alert(successMessage);
 					break;
 				default:
 					alert("Sorry, an unexpected error occurred.");
