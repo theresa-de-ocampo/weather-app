@@ -33,7 +33,7 @@ class User {
 	}
 
 	public function getUsers() {
-		$this->db->query(" SELECT `user_id`, `fname`, `lname`, `location`, `profile_picture` FROM `user`");
+		$this->db->query(" SELECT `user_id`, `fname`, `lname`, `location`, `profile_picture` FROM `user` ORDER BY `fname`");
 		return $this->db->resultSet();
 	}
 
