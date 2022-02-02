@@ -7,6 +7,13 @@ function displayWeather(data, unit, setLocation) {
 
 openWeatherMap.directGeocoding($("#friend-location").text())
 .then(data => {
-	const unit = $("header").attr("data-unit");
-	openWeatherMap.fetchWeather(data[0].lat, data[0].lon, unit);
+	if (jQuery.isEmptyObject(data)) {
+		$("#temperature").text("Unknown");
+		$("#description").text("Unknown");
+		alert("Sorry, there was an error in retrieving your friend's location.");
+	}
+	else {
+		const unit = $("header").attr("data-unit");
+		openWeatherMap.fetchWeather(data[0].lat, data[0].lon, unit);
+	}
 });
