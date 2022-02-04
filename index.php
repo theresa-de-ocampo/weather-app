@@ -89,8 +89,8 @@
 		</section><!-- #hourly-forecast -->
 
 		<section id="daily-forecast">
-				<div id="today"></div>
-				<div id="forecast-wrapper"></div>
+			<div id="today"></div>
+			<div id="forecast-wrapper"></div>
 		</section><!-- #daily-forecast -->
 	</main>
 
