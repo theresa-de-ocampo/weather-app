@@ -8,4 +8,8 @@
 	#weather-details table tr td:nth-child(2) {
 		padding-left: 50px;
 	}
+
+	#daily-forecast {
+		min-height: calc(100vh - 70px);
+	}
 }
