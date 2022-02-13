@@ -94,6 +94,8 @@
 		</section><!-- #daily-forecast -->
 	</main>
 
+	<div id="loading"><img src="img/logo.png" alt="WWÜ" /></div>
+
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script src="js/open-weather-map.js"></script>
 	<script src="js/moment-2.29.1.min.js"></script>

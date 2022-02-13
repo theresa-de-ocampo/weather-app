@@ -99,7 +99,7 @@ function displayWeather(data, unit, setLocation) {
 			$("#today").html(`
 				<h2>Daily Forecast &#8594;</h2>
 				<div>
-				<img src="http://openweathermap.org/img/wn//${day.weather[0].icon}@4x.png" alt="Weather Icon" class="icon" />
+				<img src="img/weather-icons/${day.weather[0].icon}@4x.png" alt="Weather Icon" class="icon" />
 				<div class="data">
 					<div class="day">${window.moment(day.dt * 1000).format("dddd")}</div>
 					<div class="temperature">Day - ${day.temp.day}&#176; ${temperatureUnit}</div>
@@ -111,13 +111,14 @@ function displayWeather(data, unit, setLocation) {
 			forecastItems += `
 				<div class="forecast-item">
 					<div class="day">${window.moment(day.dt * 1000).format("dddd")}</div>
-					<img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="Weather Icon" class="icon" />
+					<img src="img/weather-icons/${day.weather[0].icon}@2x.png" alt="Weather Icon" class="icon" />
 					<div class="temperature">Day -  ${day.temp.day}&#176; ${temperatureUnit}</div>
 					<div class="temperature">Night - ${day.temp.night}&#176; ${temperatureUnit}</div>
 				</div><!-- .forecast-item -->
 			`;
 	});
 	$("#forecast-wrapper").html(forecastItems);
+	$("#loading").css("display", "none");
 }
 
 if (userId !== "") {
