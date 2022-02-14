@@ -43,5 +43,20 @@ let openWeatherMap = {
 				"Message: " + error.message + "\n"
 			);
 		}
+	},
+	load: function() {
+		if (userId !== "") {
+			this.directGeocoding($("#location").text())
+			.then(data => {
+				if (jQuery.isEmptyObject(data)) {
+					alert("[ERROR] Non-existent city! Please change your location.");
+					window.location.replace("settings.php");
+				}
+				const unit = $("header").attr("data-unit");
+				this.fetchWeather(data[0].lat, data[0].lon, unit);
+			});
+		}
+		else
+			this.initialize();
 	}
 };

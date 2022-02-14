@@ -28,6 +28,7 @@
 			<li><a href="index.php">Home</a></li>
 			<li><a href="friends.php" class="requires-login">Friends</a></li>
 			<li><a href="settings.php" class="requires-login active">Settings</a></li>
+			<li><a href="map.php">Map</a></li>
 		</ul>
 	</nav><!-- #outer-navigation -->
 

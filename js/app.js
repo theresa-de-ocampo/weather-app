@@ -121,16 +121,4 @@ function displayWeather(data, unit, setLocation) {
 	$("#loading").css("display", "none");
 }
 
-if (userId !== "") {
-	openWeatherMap.directGeocoding($("#location").text())
-	.then(data => {
-		if (jQuery.isEmptyObject(data)) {
-			alert("[ERROR] Non-existent city! Please change your location.");
-			window.location.replace("settings.php");
-		}
-		const unit = $("header").attr("data-unit");
-		openWeatherMap.fetchWeather(data[0].lat, data[0].lon, unit);
-	});
-}
-else
-	openWeatherMap.initialize();
+openWeatherMap.load();

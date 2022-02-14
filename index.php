@@ -20,6 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="css/all.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/general.css" />
 	<link rel="stylesheet" type="text/css" href="css/outer-navigation-menu.css" />
+	<link rel="stylesheet" type="text/css" href="css/loading.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/media-queries.css" />
 	<title>WWÜ</title>
@@ -30,6 +31,7 @@
 			<li><a href="index.php" class="active">Home</a></li>
 			<li><a href="friends.php" class="requires-login">Friends</a></li>
 			<li><a href="settings.php" class="requires-login">Settings</a></li>
+			<li><a href="map.php">Map</a></li>
 		</ul>
 	</nav><!-- #outer-navigation -->
 
