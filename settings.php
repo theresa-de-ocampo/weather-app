@@ -3,6 +3,7 @@
 	$user_id = $_SESSION["account-verified"];
 	$user = new User();
 	$u = $user->getUser($user_id);
+	require_once "src/modal.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +16,8 @@
 	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
 	<link rel="stylesheet" type="text/css" href="css/all.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/general.css" />
+	<link rel="stylesheet" type="text/css" href="css/tingle.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/modal.css" />
 	<link rel="stylesheet" type="text/css" href="css/outer-navigation-menu.css" />
 	<link rel="stylesheet" type="text/css" href="css/input.css" />
 	<link rel="stylesheet" type="text/css" href="css/validation.css" />
@@ -42,7 +45,7 @@
 		<label for="check-menu" class="menu-button"><div class="menu-lines"></div></label>
 	</header>
 
-	<main>
+	<main data-modal="<?php echo $modal_flag; ?>">
 		<section id="settings">
 			<form action="src/edit-user.php" method="post" enctype="multipart/form-data" novalidate>
 				<div id="drop-area">
@@ -94,6 +97,8 @@
 	</main>
 
 	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/tingle.min.js"></script>
+	<script src="js/modal.js"></script>
 	<script src="js/outer-navigation.js"></script>
 	<script src="js/show-password.js"></script>
 	<script src="js/validation.js"></script>

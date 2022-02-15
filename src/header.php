@@ -18,6 +18,6 @@
 		$user_id = $location = "";
 		$fname = "wwü";
 		$icon = "in";
-		$logInLogOut = "login.html";
+		$logInLogOut = "login.php";
 	}
 ?>

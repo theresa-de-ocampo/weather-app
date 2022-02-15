@@ -146,14 +146,11 @@ class Database {
 	}
 
 	public function confirmQuery($message, $redirect) {
-		if ($this->stmt->rowCount() > 0) {
-			if ($message !== "") {
-				echo "<script>alert('$message');</script>";
-			}
-		}
-		else {
-			echo "<script>alert('An unexpected error occurred. Please try again later.');</script>";
-		}
+		if ($this->stmt->rowCount() > 0)
+			if ($message !== "")
+				$redirect .= "?modal=success";
+		else
+			$redirect .= "?modal=error";
 		echo "<script>window.location.replace('$redirect');</script>";
 	}
 

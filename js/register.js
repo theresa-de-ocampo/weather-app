@@ -23,6 +23,9 @@ function onSuccess(position) {
 	});
 }
 
+if ($("form").attr("data-modal") == "register")
+	createModal("<div class='info'>It seems like you don\'t have an account, please register first.</div>");
+
 $("form").on("submit", function(e) {
 	validate(e, true);
 });

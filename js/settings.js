@@ -1,4 +1,12 @@
 // jshint esversion: 6
+const modalFlag = $("main").attr("data-modal");
+if (modalFlag == "location")
+	createModal(`<div class='info'><span class='error'>[ERROR]</span> Non-existent city! Please change your location.</div>`);
+else if (modalFlag == "success")
+	createModal("<div class='info'>Changes were successfully saved!</div>");
+else if (modalFlag == "error")
+	createModal("<div class='info'>An unexpected error occurred. Please try again later.</div>");
+
 let status = $("#status").attr("data-value");
 if (status == "Moderately Affected")
 	$("#status option[value='Moderately Affected']").prop("selected", "selected");

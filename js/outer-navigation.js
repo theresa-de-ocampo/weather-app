@@ -15,7 +15,7 @@ $("#outer-navigation ul li a").on("click", function(e) {
 	$this = $(this);
 	if ($this.hasClass("requires-login") && userId === "") {
 		e.preventDefault();
-		alert("Please log-in first.");
+		createModal("<div class='info'>Please log-in first.</div>");
 	}
 	else {
 		$("#outer-navigation ul li a").removeClass("active");

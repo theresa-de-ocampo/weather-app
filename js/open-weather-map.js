@@ -38,20 +38,20 @@ let openWeatherMap = {
 		}
 
 		function onError(error) {
-			alert(
-				"Code: " + error.code + "\n" +
-				"Message: " + error.message + "\n"
-			);
+			createModal(`
+				<div class='info'>
+					<span class='error'>[ERROR]</span> Code: ${error.code} <br />
+					${error.message}
+				</div>
+			`);
 		}
 	},
 	load: function() {
 		if (userId !== "") {
 			this.directGeocoding($("#location").text())
 			.then(data => {
-				if (jQuery.isEmptyObject(data)) {
-					alert("[ERROR] Non-existent city! Please change your location.");
-					window.location.replace("settings.php");
-				}
+				if (jQuery.isEmptyObject(data))
+					window.location.replace("settings.php?modal=location");
 				const unit = $("header").attr("data-unit");
 				this.fetchWeather(data[0].lat, data[0].lon, unit);
 			});

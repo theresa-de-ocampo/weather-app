@@ -10,7 +10,7 @@ openWeatherMap.directGeocoding($("#friend-location").text())
 	if (jQuery.isEmptyObject(data)) {
 		$("#temperature").text("Unknown");
 		$("#description").text("Unknown");
-		alert("Sorry, there was an error in retrieving your friend's location.");
+		createModal("<div class='info'>Sorry, there was an error in retrieving your friend's location.</div>");
 	}
 	else {
 		const unit = $("header").attr("data-unit");

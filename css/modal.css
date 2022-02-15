@@ -1,0 +1,24 @@
+.info {
+	padding: 30px;
+	text-align: center;
+}
+
+.info .error {
+	color: var(--tall-poppy);
+}
+
+@media screen and (max-width: 540px) {
+	.tingle-modal-box {
+		width: 100%;
+		position: absolute;
+		top: 0;
+	}
+
+	.tingle-modal-box .info {
+		padding-top: 90px;
+	}
+
+	.tingle-modal--overflow {
+		padding: 0;
+	}
+}

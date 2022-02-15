@@ -13,17 +13,10 @@ if (isset($_POST["submit"])) {
 			$_SESSION["account-verified"] = $account->user_id;
 			$path = "../index.php";
 		}
-		else {
-			$message = "The password you entered is incorrect!";
-			$path = "../login.html";
-		}
+		else
+			$path = "../login.php?modal=incorrect";
 	}
-	else {
-		$message = "It seems like you don\'t have an account, please register first.";
-		$path = "../register.html";
-	}
-
-	if (isset($message))
-		echo "<script>alert('$message');</script>";
+	else
+		$path = "../register.php?modal=register";
 	echo "<script>window.location.replace('$path');</script>";
 }

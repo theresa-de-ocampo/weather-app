@@ -121,4 +121,7 @@ function displayWeather(data, unit, setLocation) {
 	$("#loading").css("display", "none");
 }
 
+if ($("main").attr("data-modal") == "success")
+	createModal("<div class='info'>Your account was successfully created!</div");
+
 openWeatherMap.load();

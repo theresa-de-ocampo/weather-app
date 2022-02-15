@@ -1,4 +1,7 @@
-<?php require_once "src/header.php"; ?>
+<?php
+	require_once "src/header.php";
+	require_once "src/modal.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +22,8 @@
 	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
 	<link rel="stylesheet" type="text/css" href="css/all.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/general.css" />
+	<link rel="stylesheet" type="text/css" href="css/tingle.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/modal.css" />
 	<link rel="stylesheet" type="text/css" href="css/outer-navigation-menu.css" />
 	<link rel="stylesheet" type="text/css" href="css/loading.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -45,7 +50,7 @@
 		<label for="check-menu" class="menu-button"><div class="menu-lines"></div></label>
 	</header>
 
-	<main>
+	<main data-modal="<?php echo $modal_flag; ?>">
 		<section id="quick-weather">
 			<div class="glassmorphism">
 				<div id="temperature"><span class="value"></span>&#176; <span class="unit"></span></div>
@@ -99,6 +104,8 @@
 	<div id="loading"><img src="img/logo.png" alt="WWÜ" /></div>
 
 	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/tingle.min.js"></script>
+	<script src="js/modal.js"></script>
 	<script src="js/open-weather-map.js"></script>
 	<script src="js/moment-2.29.1.min.js"></script>
 	<script src="js/util.js"></script>

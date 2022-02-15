@@ -90,10 +90,10 @@ $("body").on("click", "#friend-requests button", function() {
 	.done(function(status) {
 		if (status) {
 			$("#" + friendId).remove();
-			alert(successMessage);
+			createModal(`<div class='info'>${successMessage}</div>`);
 		}
 		else
-			alert("Sorry, an unexpected error occurred.");
+			createModal("<div class='info'>Sorry, an unexpected error occurred.</div>");
 	});
 });
 
@@ -182,13 +182,13 @@ $("body").on("click", "#search-list button", function() {
 					break;
 				case "Deleted":
 					$("#" + potentialFriendId).remove();
-					alert(successMessage);
+					createModal(`<div class='info'>${successMessage}</div>`);
 					break;
 				default:
-					alert("Sorry, an unexpected error occurred.");
+					createModal("<div class='info'>Sorry, an unexpected error occurred.</div>");
 			}
 		}
 		else
-			alert("Sorry, an unexpected error occurred.");
+			createModal("<div class='info'>Sorry, an unexpected error occurred.</div>");
 	});
 });

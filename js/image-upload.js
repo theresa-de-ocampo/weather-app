@@ -20,7 +20,7 @@ $(function() {
 			fileReader.readAsDataURL(file); // Get base64 format of the image.
 		}
 		else {
-			alert("Please upload image files only.");
+			createModal("<div class='info'>Please upload image files only.</div>");
 			if ($("#drop-area img").length == 0) {
 				$dropArea.removeClass("active");
 				$instructions.html("Drag &amp; Drop to Upload File");

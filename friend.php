@@ -22,6 +22,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/all.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/general.css" />
+	<link rel="stylesheet" type="text/css" href="css/tingle.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/modal.css" />
 	<link rel="stylesheet" type="text/css" href="css/outer-navigation-menu.css" />
 	<link rel="stylesheet" type="text/css" href="css/weather-status.css" />
 	<link rel="stylesheet" type="text/css" href="css/one-person-page.css" />
@@ -83,6 +85,8 @@
 	</main>
 
 	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/tingle.min.js"></script>
+	<script src="js/modal.js"></script>
 	<script src="js/open-weather-map.js"></script>
 	<script src="js/util.js"></script>
 	<script src="js/outer-navigation.js"></script>
