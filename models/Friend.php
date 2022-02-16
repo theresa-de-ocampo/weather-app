@@ -95,4 +95,16 @@ class Friend extends User {
 		");
 		return $this->db->resultRecord();
 	}
+
+	public function unfriend($user_id, $friend_id, $friend_name) {
+		$this->db->query("
+			DELETE FROM `friend`
+			WHERE
+				`status` = 'Friends' AND (
+					(`from` = $user_id AND `to` = $friend_id) OR
+					(`from` = $friend_id AND `to` = $user_id)
+				)
+		");
+		$this->db->execute("Success!", "../friends.php");
+	}
 }

@@ -7,6 +7,7 @@
 		require_once "models/User.php";
 		$user = new User();
 		$f = $user->getUser($friend_id);
+		$friend_name = $f->fname." ".$f->lname;
 	}
 	else {
 		echo "<script>alert('Sorry, something went wrong!');</script>";
@@ -53,7 +54,7 @@
 	<main>
 		<section id="friend">
 			<img src="img/profile-pictures/<?php echo $f->profile_picture; ?>" alt="Profile Picture" />
-			<h2><?php echo $f->fname." ".$f->lname; ?></h2>
+			<h2><?php echo $friend_name; ?></h2>
 			<div>
 				<span class="status <?php echo str_replace(" ", "-", strtolower($f->status)); ?>">&#9673;</span>
 				<?php echo $f->status; ?>
@@ -79,6 +80,14 @@
 				<div class="item">
 					<div class="label">Email</div>
 					<div class="value"><a href="mailto:<?php echo $f->email; ?>"><?php echo $f->email; ?></a></div>
+				</div><!-- .item -->
+				<div class="item">
+					<form action="src/unfriend.php" method="post">
+						<input type="hidden" name="user-id" value="<?php echo $user_id; ?>" />
+						<input type="hidden" name="friend-id" value="<?php echo $friend_id; ?>" />
+						<input type="hidden" name="friend-name" value="<?php echo $friend_name; ?>" />
+						<button id="unfriend"><i class="fa fa-user-times"></i>Unfriend</button>
+					</form>
 				</div><!-- .item -->
 			</div><!-- #friend-data -->
 		</section><!-- #friend -->

@@ -17,3 +17,17 @@ openWeatherMap.directGeocoding($("#friend-location").text())
 		openWeatherMap.fetchWeather(data[0].lat, data[0].lon, unit);
 	}
 });
+
+$("#unfriend").on("click", function(e) {
+	e.preventDefault();
+	createModal(`
+		<div class='info'>
+			Are you sure you want to unfriend <b>${$("h2").text()}</b>?
+			<button class='main'>Yes</button>
+		</div><!-- .info -->
+	`);
+
+	$("body").on("click", "button.main", function() {
+		$("form").submit();
+	});
+});
