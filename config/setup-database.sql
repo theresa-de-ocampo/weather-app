@@ -66,7 +66,11 @@ VALUES
 	(DEFAULT, 'Seon-ho', 'Kim', '8292694897', 'Pohang, KR', 'kim.seon.ho@gmail.com',
 		'$2y$10$Y9BK8yWGNLNhUEBCMlS5FeuaKH4r023CpK6hKfrejtFow2lrB59c2', "15.jpg", DEFAULT, DEFAULT),
 	(DEFAULT, 'Andrew', 'Sy', '09074653981', 'Makati, PH', 'andrew.sy@gmail.com',
-		'$2y$10$/XgnYRr8AUPXIwwRtWOEGO.kWEvNkqhX6klEkUWo4DRUNsZNZIKRi', "16.jpg", DEFAULT, DEFAULT);
+		'$2y$10$/XgnYRr8AUPXIwwRtWOEGO.kWEvNkqhX6klEkUWo4DRUNsZNZIKRi', "16.jpg", DEFAULT, DEFAULT),
+	(DEFAULT, 'Bianca', 'Catcalin', '09183480128', 'Alfonso, PH', 'bianca.cc@gmail.com',
+		'$2y$10$eQGMKP4vu6rgoELoFyzWnOSFjciLrQP64IQ33K9ih31BDe.NePDFe', '17.jpg', DEFAULT, DEFAULT),
+	(DEFAULT, 'Brian', 'Timban', '09664613842', 'Tacloban, PH', 'brian.timban@gmail.com',
+		'$2y$10$ZeLHwjTJhNzJSywHKsqmTuPrFxVyZwXWtBL55FiEjJpA0KItVzYw2', '18.jpg', DEFAULT, DEFAULT);
 
 INSERT INTO
 	`friend`
@@ -78,4 +82,6 @@ VALUES
 	(1, 7, 'Friends'),
 	(1, 10, 'Pending'),
 	(14, 1, 'Pending'),
-	(16, 1, 'Pending');
+	(16, 1, 'Pending'),
+	(17, 1, 'Friends'),
+	(18, 1, 'Friends');
