@@ -40,7 +40,7 @@
 		<input id="show-password" type="checkbox" class="show-password" />
 		<label for="show-password" class="inline show-password-label">Show Password</label>
 
-		<a href="register.html">Create an Account</a>
+		<a href="register.php">Create an Account</a>
 		<button type="submit" name="submit" class="solo">Log In</button>
 	</form>
 
