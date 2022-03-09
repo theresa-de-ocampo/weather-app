@@ -39,7 +39,7 @@ body {
 		env(safe-area-inset-right, 0px)
 		env(safe-area-inset-bottom, 0px)
 		env(safe-area-inset-left, 0px);
-		font-size: 20px;
+	font-size: 20px;
 }
 
 .inline {

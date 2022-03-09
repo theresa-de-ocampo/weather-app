@@ -31,10 +31,11 @@ div.value {
 	background: none;
 	border: none;
 	color: var(--tall-poppy);
-	display: block;
+	display: inline-block;
 	font-size: inherit;
 	font-weight: bold;
 	margin-top: 30px;
+	text-align: center;
 	text-transform: uppercase;
 }
 
