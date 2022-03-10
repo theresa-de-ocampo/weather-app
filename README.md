@@ -16,7 +16,7 @@ Weather information is crucial to anyone who is working, or even if you are stil
 	```bash
 		git clone https://github.com/theresa-de-ocampo/weather-app.git
 	```
-2. Host the project in `wether-app`.
+2. Host the project in `weather-app`.
 3. Through your hosting site's database manager, run the SQL file.
 	```sql
 		source your-path/weather-app/config/setup-database.sql
@@ -27,9 +27,14 @@ Weather information is crucial to anyone who is working, or even if you are stil
 		define("DB_USER", "your-username");
 		define("DB_PASSWORD", "your-password");
 	```
-5. Create a cordova project.
+5. Change line 8 of `cordova-app/www/js/app.js`to your website's URL.
+6. On your terminal, navigate to `cordova-app`, and run the following.
 	```bash
-		cordova create folder-name
-		cd folder-name
 		cordova platform add android
+		cordova build android
 	```
+7. Run the generated APK file - `your-path\cordova-app\platforms\android\app\build\outputs\apk\debug\app-debug.apk`.
+
+## Sample Outputs
+![Application Screenshots](sample-outputs.gif)<br />
+(c) Logo By [Arthiiird](https://www.facebook.com/arthiiird)
