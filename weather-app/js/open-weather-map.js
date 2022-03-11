@@ -10,7 +10,7 @@ imperial = {
 };
 
 let openWeatherMap = {
-	"apiKey": "364a5841b429913e54511e8bb51ba359",
+	"apiKey": "insert your API key here",
 	fetchWeather: function(latitude, longitude, unit = "metric", setLocation = false) {
 		fetch(
 			`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely&units=${unit}&appid=${this.apiKey}`
