@@ -27,13 +27,14 @@ Weather information is crucial to anyone who is working, or even if you are stil
 		define("DB_USER", "your-username");
 		define("DB_PASSWORD", "your-password");
 	```
-5. Change line 8 of `cordova-app/www/js/app.js`to your website's URL.
-6. On your terminal, navigate to `cordova-app`, and run the following.
+5. Subscribe to [OpenWeatherMap's One Call API](https://openweathermap.org/full-price#current), insert your key on line 13 of `your-path/weather-app/js/open-weather-map.js`.
+6. Change line 8 of `cordova-app/www/js/app.js`to your website's URL.
+7. On your terminal, navigate to `cordova-app`, and run the following.
 	```bash
 		cordova platform add android
 		cordova build android
 	```
-7. Run the generated APK file - `your-path\cordova-app\platforms\android\app\build\outputs\apk\debug\app-debug.apk`.
+8. Run the generated APK file - `your-path\cordova-app\platforms\android\app\build\outputs\apk\debug\app-debug.apk`.
 
 ## Sample Outputs
 ![Application Screenshots](sample-outputs.gif)<br />
